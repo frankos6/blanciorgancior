@@ -1,0 +1,69 @@
+ 
+body{
+    font-family: 'Bebas Neue';
+    background-image: url("../images/construction.png");
+    margin: 0 auto;
+    margin-top:5px;
+    font-size: 200px;
+    text-align: center;
+}
+
+ /* HEDER ==============================================*/
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.pog{
+    width: 100px;
+    height: 18px;
+}
+
+ /* MENU ===============================================*/
+
+ .body{
+    font-size: 20px;
+    text-align:center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.menu{
+    align-self: left;
+    background-color: #2561c2;
+    height: 90%;
+    position: fixed;
+    width: 10%;
+    margin-bottom: 50px;
+}
+
+.hamburger:hover{
+    background-color: #3399FF;
+}
+
+.hamburger{
+    background-color: #2561c2;
+    align-self: left;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    margin-top: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    margin-left: -10px;
+}
+.inhamburger{
+    width: 100%;
+    height: 100%;
+}
+ /* main ===============================================*/
+.main{
+    background-color:#2561c2;
+    border-radius: 20px;
+    margin-top: 100px;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
