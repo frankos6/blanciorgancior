@@ -1,66 +1,31 @@
- 
 body{
-    font-family: 'Bebas Neue';
-    background-image: url("../images/depositphotos_61522523-stock-photo-young-guy-on-vacation.jpg");
-    background-size: cover;
-    margin: 0 auto;
-    margin-top:5px;
-    text-align: center;
-    color: white;
-    font-size: 30px;
+  background-color: #000000;
+  color: #FFF01F;
+  font-family: 'Bebas Neue';
+  font-size: 250px;
+  animation: neonAnim 1.5s alternate-reverse infinite;
+  display:flex;
+  flex-direction:column; 
+  justify-content:center;
 }
 
-a{
-    text-decoration: none;
-    color: white;
+.p1{
+  margin: 0;
+  font-size: 300px;
+}
+.p2{
+  font-size: 36px;
 }
 
-.pog{
-    width: 100px;
-    height: 18px;
+.content{
+  text-align: center;
 }
 
-
-.body{
-    font-size: 20px;
-    text-align:center;
-    color: white;
-}
-.main{
-    display: flex;
-}
-
-.menu{
-background-color: #080404;
-width: 200px;
-height: 850px;
-border-radius: 30px;
-box-shadow: 0px 15px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-margin-top: 20px;
-margin-left: 5px;
-padding-top: 5px;
-}
-
-.strona{
-background-color: #080404;
-width: 1660px;
-height: 850px;
-border-radius: 30px;
-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-margin-top: 20px;
-margin-left: 50px;
+.trailer{
+  height: 1280px;
 }
 
 .video{
- width: inherit;
- height: inherit;
- border-radius: inherit;
-}
-
-.logo{
-height: 30xp;
-width: 30px;
-position: absolute;
-bottom: 30px;
-border: 1px dashed white;
+  height: 100%;
+  width: 100%;
 }
