@@ -1,6 +1,6 @@
 today = new Date();
 
-opening = new Date("January 01, 2022");
+opening = new Date("April 20, 2022");
 msPerDay = 24 * 60 * 60 * 1000 ;
 timeLeft = (opening.getTime() - today.getTime());
 

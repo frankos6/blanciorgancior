@@ -12,3 +12,18 @@
           0 0 60px rgba(255, 240, 31, .7);
       }
 }
+
+@keyframes neonAnimBox {
+  from {
+      box-shadow:
+        0 0 10px rgba(255, 240, 31, .7),
+        0 0 40px rgba(255, 240, 31, .7),
+        0 0 100px rgba(255, 240, 31, .7);
+    }
+    to {
+      box-shadow:
+        0 0 5px rgba(255, 240, 31, .7),
+        0 0 20px rgba(255, 240, 31, .7),
+        0 0 60px rgba(255, 240, 31, .7);
+    }
+}

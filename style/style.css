@@ -24,8 +24,52 @@ body{
 .trailer{
   height: 1280px;
 }
-
 .video{
   height: 100%;
   width: 100%;
+}
+
+.about{
+  width: 100%;
+  height: 1280px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.aboutwindow{
+  box-shadow:
+  0 0 5px rgba(255, 240, 31, .7),
+  0 0 20px rgba(255, 240, 31, .7),
+  0 0 40px rgba(255, 240, 31, .7);
+  border: 3px solid #FFF01F;
+  height: 600px;
+  width: 20%;
+  margin-left: 10%;
+  margin-top: 2.5%;
+  float: left;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 3px 0px;
+  margin-bottom: 2.5%;
+}
+
+.aboutimg{
+  border-radius: 50%;
+  height: 25%;
+  width: 35%;
+  border: 3px dashed #FFF01F;
+  
+}
+
+.aboutname{
+  margin: 2px;
+}
+.abouttitle{
+  margin: 0;
+  font-size: 24px;
+}
+.aboutcontent{
+  font-size: 24px;
 }
