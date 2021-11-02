@@ -1,8 +1,8 @@
 body{
-  background-color: #000000;
-  color: #FFF01F;
-  font-family: 'Bebas Neue';
-  font-size: 250px;
+  background-color: #000000 !important;
+  color: #FFF01F !important;
+  font-family: 'Bebas Neue' !important;
+  font-size: 250px !important;
   animation: neonAnim 1.5s alternate-reverse infinite;
   display:flex;
   flex-direction:column; 
@@ -32,8 +32,6 @@ body{
 .about{
   width: 100%;
   height: 1280px;
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .aboutwindow{
@@ -42,25 +40,19 @@ body{
   0 0 20px rgba(255, 240, 31, .7),
   0 0 40px rgba(255, 240, 31, .7);
   border: 3px solid #FFF01F;
-  height: 600px;
-  width: 20%;
-  margin-left: 10%;
-  margin-top: 2.5%;
-  float: left;
+  text-align: center;
   font-size: 36px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   padding: 20px 3px 0px;
-  margin-bottom: 2.5%;
+  width: 66%;
+  margin: 35px;
+  height: 650px;
 }
 
 .aboutimg{
   border-radius: 50%;
-  height: 25%;
-  width: 35%;
+  height: 150px;
+  width: 150px;
   border: 3px dashed #FFF01F;
-  
 }
 
 .aboutname{
@@ -72,4 +64,11 @@ body{
 }
 .aboutcontent{
   font-size: 24px;
+}
+
+.col-md-4{
+  margin: auto;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
