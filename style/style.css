@@ -3,10 +3,13 @@ body{
   color: #FFF01F !important;
   font-family: 'Bebas Neue' !important;
   font-size: 250px !important;
-  animation: neonAnim 1.5s alternate-reverse infinite;
   display:flex;
   flex-direction:column; 
   justify-content:center;
+}
+
+body:hover{
+  cursor: progress;
 }
 
 .p1{
@@ -17,8 +20,13 @@ body{
   font-size: 36px;
 }
 
+.content:hover{
+ animation: spin 720s;
+}
+
 .content{
   text-align: center;
+  animation: neonAnim 1.5s alternate-reverse infinite;
 }
 
 .trailer{
@@ -29,50 +37,20 @@ body{
   width: 100%;
 }
 
-.about{
-  width: 100%;
-  height: 1280px;
+a, a:active{
+  color: black;
+  text-decoration: none;
+  animation: none;
+  border: 5px solid black;
+  padding: 10px;
 }
 
-.aboutwindow{
-  box-shadow:
-  0 0 5px rgba(255, 240, 31, .7),
-  0 0 20px rgba(255, 240, 31, .7),
-  0 0 40px rgba(255, 240, 31, .7);
-  border: 3px solid #FFF01F;
-  text-align: center;
-  font-size: 36px;
-  padding: 20px 3px 0px;
-  width: 66%;
-  margin: 35px;
-  height: 650px;
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
-.aboutimg{
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  border: 2px solid #FFF01F;
-  object-fit: cover;
-}
-
-.aboutname{
-  margin: 2px;
-}
-.abouttitle{
-  margin: 0;
-  font-size: 24px;
-}
-.aboutcontent{
-  font-size: 22px;
-  border-top: 2px solid #FFF01F;
-}
-
-.col-md-4{
-  margin: auto;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
+a:hover{
+  background-color: black;
+  color: #FFF01F;
+  transition: 0.5s;
+  border: 5px solid #FFF01F;
+  animation: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
