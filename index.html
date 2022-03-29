@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="leftside-menu">
@@ -29,7 +30,14 @@
             <li>Listopad</li>
             <li>Grudzień</li>
         </ul>
-    <img src="Images/cog-icon.png" class="options-icon">
+    <img src="Images/cog-icon.png" class="options-icon" onclick="on()">
+    </div>
+
+    <div class="options-menu" id="options-menu"  onclick="off()">
+        <div class="overlay">
+            <div class="navbar">
+            </div>
+        </div>
     </div>
 </body>
 </html>
