@@ -14,6 +14,7 @@ body{
     color: white;
     border-radius: 0px 30px 30px 0px;
     padding: 20px;
+    box-shadow: 2px 2px 5px black;
 }   
 
 li{
@@ -22,7 +23,7 @@ li{
     text-decoration: none;
     border-radius: 15px;
     margin-bottom: 10px;
-    transition: 0.2s
+    transition: 0.3s;
 }
 
 ul{
@@ -42,7 +43,7 @@ li:hover{
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 400;
-    transition: 0.2s
+    transition: 0.3s
 }
 
 .calendar-icon{
@@ -73,6 +74,7 @@ li:hover{
 .options-icon:hover {
     transform: rotate(360deg);
     cursor: pointer;
+    transition: 0.2s
 }
 
 .options-menu{
@@ -94,7 +96,7 @@ li:hover{
 .overlay{
     box-shadow: 2px 2px 5px black;
     background-color: whitesmoke;
-    border-radius: 30px;
+    border-radius: 35px;
     width: 70%;
     height: 70%;
     margin: auto;
@@ -102,18 +104,22 @@ li:hover{
 
 .close-icon{
     background: white;
-    width: 50px;
+    height: 55px;
+    width: 55px;
     position: absolute;
-    border-radius: 30px;
+    margin-top: 5px;
+    margin-left: 15px;
+    background: none;
 }
   
 .close-icon:hover {
     cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.2); 
 }
 
 .navbar{
-    background-color: white;
-    border-bottom: 1px solid gray;
+    background-color: #7D4F50;
     height: 10%;
     border-radius: 30px 30px 0px 0px;
 }
