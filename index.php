@@ -15,15 +15,17 @@
 </head>
 <body>
     <div class="leftside-menu" id="leftside">
-        <div class="inline-block"> BGT <img src="Images/calendar-icon.png" class="calendar-icon"> </div>
+        <!-- <div class="inline-block"> BGT <img src="Images/calendar-icon.png" class="calendar-icon"> </div>
         CALENDAR
         <hr>
-        <p id ="welcome-message">Witaj, <?php echo $_SESSION['Imie']?></p>
+        <p id ="welcome-message">Witaj, <?php // echo $_SESSION['Imie']?></p> -->
 
-    <img src="Images/cog-icon.png" class="options-icon" onclick="on()">
-    <button onclick="logout()" class="logout-button"><span>Wyloguj</span></button>
+        <img src="Images/cog-icon.png" class="options-icon" onclick="on()">
+        <button onclick="logout()" class="logout-button"><span>Wyloguj</span></button>
     </div>
+    <div class="rightside-menu">
 
+    </div>
     <div class="options-menu" id="options-menu">
         <div class="overlay">
             <div class="navbar" id="navbar">
