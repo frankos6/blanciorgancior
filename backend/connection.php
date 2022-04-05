@@ -1,5 +1,14 @@
 <?php
+session_start();
 $conn = new mysqli('localhost','root','','kalendarz');
+if (isset($_SESSION['name']) && str_contains($_SERVER['PHP_SELF'],"login.php")){
+    $user_name = $_SESSION['name'];
+}
+else{
+    header("Location: /login.php");
+}
+$q = "SELECT id from users WHERE username = $user_name";
+$result = $conn->query($q);
 ?>
 <script>
     class Zadanie
@@ -24,10 +33,11 @@ $conn = new mysqli('localhost','root','','kalendarz');
     }
     class Kalendarz
     {
-        constructor(id,kolor,nazwa){
+        constructor(id,kolor,nazwa,user_id){
             this.id = id;
             this.kolor = kolor;
             this.nazwa = nazwa;
+            this.user_id = user_id;
         }
     }
     zadania = [];
@@ -52,7 +62,7 @@ $conn = new mysqli('localhost','root','','kalendarz');
     $i = 0;
     while($obj = $result->fetch_object())
     {
-        echo "kalendarze.push(new Kalendarz($obj->id,'$obj->kolor','$obj->nazwa'))";
+        echo "kalendarze.push(new Kalendarz($obj->id,'$obj->kolor','$obj->nazwa',$obj->user_id))";
     }
     echo '</script>';
     // wydarzenia baza -> js
