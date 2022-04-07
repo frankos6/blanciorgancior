@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
+    <script src="Scripts/script.js"></script>
+    <script src="Scripts/scripts.js"></script>
     <link rel="icon" type="image/x-icon" href="/images/calendar-icon.png">
 </head>
 <body>
