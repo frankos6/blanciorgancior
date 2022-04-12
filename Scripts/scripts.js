@@ -29,13 +29,6 @@ function updateButtons(){
     }
     else
     {document.getElementById('next').innerText = months[currentMonth+1]+" >";}
-}
-
-function next() {
-    currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-    currentMonth = (currentMonth + 1) % 12;
-    showCalendar(currentMonth, currentYear);
-    updateButtons();
     if (currentMonth===11 && currentYear === 2030){
         document.getElementById('next').style.opacity= "0%";
         document.getElementById('next').disabled = true;
@@ -44,13 +37,6 @@ function next() {
         document.getElementById('next').style.opacity= "100%";
         document.getElementById('next').disabled = false;
     }
-}
-
-function previous() {
-    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-    showCalendar(currentMonth, currentYear);
-    updateButtons();
     if (currentMonth===0 && currentYear === 1990){
         document.getElementById('previous').style.opacity= "0%";
         document.getElementById('previous').disabled = true;
@@ -59,6 +45,21 @@ function previous() {
         document.getElementById('previous').style.opacity= "100%";
         document.getElementById('previous').disabled = false;
     }
+}
+
+function next() {
+    currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+    currentMonth = (currentMonth + 1) % 12;
+    showCalendar(currentMonth, currentYear);
+    updateButtons();
+    
+}
+
+function previous() {
+    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+    showCalendar(currentMonth, currentYear);
+    updateButtons();
 }
 
 function jump() {
@@ -127,7 +128,7 @@ function showCalendar(month, year) {
 }
 
 
-// check how many days in a month
+// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }

@@ -12,3 +12,7 @@ function colorChange(color) {
     document.getElementById("leftside").style.backgroundColor = color;
     document.getElementById("navbar").style.backgroundColor = color;
 }
+
+function logout(){
+    location.href = "login.php"
+}
