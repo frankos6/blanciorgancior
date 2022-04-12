@@ -20,15 +20,15 @@ function capitalize(string){
 
 function updateButtons(){
     if (currentMonth === 0) {
-        document.getElementById('previous').innerText = "« "+months[11];
+        document.getElementById('previous').innerText = "< "+months[11];
     }
     else 
-    {document.getElementById('previous').innerText = "« "+months[currentMonth-1];}
+    {document.getElementById('previous').innerText = "< "+months[currentMonth-1];}
     if (currentMonth === 11) {
-        document.getElementById('next').innerText = months[0]+" »";
+        document.getElementById('next').innerText = months[0]+" >";
     }
     else
-    {document.getElementById('next').innerText = months[currentMonth+1]+" »";}
+    {document.getElementById('next').innerText = months[currentMonth+1]+" >";}
     if (currentMonth===11 && currentYear === 2030){
         document.getElementById('next').style.opacity= "0%";
         document.getElementById('next').disabled = true;
@@ -37,7 +37,7 @@ function updateButtons(){
         document.getElementById('next').style.opacity= "100%";
         document.getElementById('next').disabled = false;
     }
-    if (currentMonth===0 && currentYear === 1990){
+    if (currentMonth===0 && currentYear === 2020){
         document.getElementById('previous').style.opacity= "0%";
         document.getElementById('previous').disabled = true;
     }

@@ -14,5 +14,5 @@ function colorChange(color) {
 }
 
 function logout(){
-    window.location.href = 'login.php';
+    location.href = "login.php"
 }
