@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="Scripts/script.js"></script>
     <script defer src="Scripts/scripts.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 </head>
 <body>
     <div class="leftside-menu" id="leftside">
