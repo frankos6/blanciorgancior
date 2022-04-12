@@ -16,13 +16,10 @@
 </head>
 <body>
     <div class="leftside-menu" id="leftside">
-        <div class="inline-block"> BGT <img src="Images/calendar-icon.png" class="calendar-icon"> </div>
-        CALENDAR
-        <hr>
-        <p id ="welcome-message">Witaj, <?php echo $_SESSION['Imie']?></p>
-
-    <img src="Images/cog-icon.png" class="options-icon" onclick="on()">
-    <button onclick="logout()" class="logout-button"><span>Wyloguj</span></button>
+        <img src="Images/calendars-icon.png" class="menu-icons">
+        <img src="Images/dashboard-icon.png" class="menu-icons">
+        <img src="Images/cog-icon.png" class="options-icon" onclick="on()">
+        <img src="Images/logout-icon.png" class="logout-icon" onclick="logout()">
     </div>
     <div class="rightside">
         <h3 class="card-header" id="monthAndYear"></h3>
