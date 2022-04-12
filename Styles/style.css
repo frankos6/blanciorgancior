@@ -9,22 +9,14 @@ html, body{
 .leftside-menu{
     height: 100%;
     background-color: #040406;
-    width: 3rem;
+    width: 8%;
     font-size: 32px;
-    color: white;   
+    color: white;
+    padding: 20px;
     padding-bottom: 0px;
+    box-shadow: 2px 2px 5px black;
     position: fixed;
-    animation: 0.25s ease-out 0s 1 slideInFromLeft; 
-    flex-direction: column;
-    justify-content: flex-start;
-    left: -2.5rem;
-    transition: left 0.25s;
-}
-
-.leftside-menu:hover{
-    left: 0;
-}
-
+}   
 
 #welcome-message{
  font-size: 20px;
@@ -49,39 +41,26 @@ html, body{
 }
 /* Options menu styling -------------------------------------------------------------------------*/
 .options-icon{
-    position: relative;
+    position: absolute;
     bottom: 0;
     margin-bottom: 30px;
     transition: transform .7s ease-in-out;
-    height: 1.7rem;
-    width: 1.7rem;
-    margin: 10px;
+    height: 2rem;
+    width: 2rem;
 }
 
-.logout-icon{
-    position: relative;
+.logout-button{
+    position: absolute;
     bottom: 0;
-    height: 1.7rem;
-    width: 1.7rem;
-    cursor: pointer;
-    margin-bottom: 80px;
-    margin: 10px;
-}
-
-.menu-icons{
-    height: 1.7rem;
-    width: 1.7rem;
-    margin: 10px;   
-    cursor: pointer;
-} 
-
-hr{
-    margin-top: -5px;
-}
-
-.logo-icon{
-    height: 3rem;
-    width: 3rem;
+    margin-bottom: 30px;
+    transition: transform .7s ease-in-out;
+    height: 2rem;
+    width: 7rem;
+    left: 4rem;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #040406;
+    border: 0;
     border-bottom: 1px solid white;
 }
 
@@ -168,11 +147,13 @@ hr{
     height: 75%;
     background-color: #040406;
     color: white;
+    opacity: 95%;
     border-right: 1px solid white;
     align-items: center;
 }
 
 .logo-box{
+    opacity: 95%;
     width: 100%;
     height: 25%;
     background-color: #040406;
@@ -264,7 +245,7 @@ hr{
 
 ::placeholder{
     font-style: italic;
-    opacity: 25%;
+    opacity: 15%;
 }
 .login-form-button span {
     display: inline-block;
@@ -327,8 +308,23 @@ a:active{
 
 .rightside {
     float: right;
+    width: 89.8%;
+    height: 100%;
+    text-align: center;
 }
 
+.table {
+    margin: auto;
+    width: 15rem;
+}
+
+.btn {
+    width: 7rem;
+}
+
+td {
+    border: 1px #777777 solid;
+}
 
 
 /* Animacje */
