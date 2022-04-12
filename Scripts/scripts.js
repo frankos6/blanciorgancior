@@ -112,7 +112,7 @@ function showCalendar(month, year) {
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
-                cell.id = `${date}-${month}-${year}`
+                cell.id = `${date}-${month+1}-${year}`
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
