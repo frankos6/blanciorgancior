@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="Scripts/script.js"></script>
-    <script src="Scripts/scripts.js"></script>
+    <script defer src="Scripts/scripts.js"></script>
     <link rel="icon" type="image/x-icon" href="/images/calendar-icon.png">
 </head>
 <body>
@@ -108,7 +108,6 @@
             <option value=2029>2029</option>
             <option value=2030>2030</option>
         </select></form>
-        <script src="scripts.js"></script>
     </div>
     <div class="options-menu" id="options-menu">
         <div class="overlay">

@@ -100,8 +100,8 @@ function showCalendar(month, year) {
             }
             else if (date > daysInMonth(month, year)) {
                 cell = document.createElement("td");
-                cellText = document.createTextNode(xd++);
-                cell.id = `${xd-1}-${month-1}-${year}`;
+                cellText = document.createTextNode(xd);
+                cell.id = `${xd++}-${month-1}-${year}`;
                 cell.style.color = "lightgray";
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -112,6 +112,7 @@ function showCalendar(month, year) {
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
+                cell.id = `${date}-${month}-${year}`
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;

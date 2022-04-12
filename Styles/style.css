@@ -327,9 +327,18 @@ a:active{
 
 .rightside {
     float: right;
+    text-align: center;
+    width: 99.6%;
 }
 
+.btn {
+    width: 7rem;
+}
 
+.table {
+    margin: auto;
+    width: 15rem;
+}
 
 /* Animacje */
 
