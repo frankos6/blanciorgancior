@@ -127,7 +127,7 @@ function showCalendar(month, year) {
 }
 
 
-// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
+// check how many days in a month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }
