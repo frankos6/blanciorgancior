@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="Scripts/script.js"></script>
     <script defer src="Scripts/scripts.js"></script>
-    <link rel="icon" type="image/x-icon" href="/images/calendar-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
     <div class="leftside-menu" id="leftside">
