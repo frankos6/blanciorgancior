@@ -1,35 +1,64 @@
 html, body{
     margin: 0;
-    padding: 0; 
     font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
 }
 
-.leftside-menu{
-    height: 100%;
+.navbar-menu{
     background-color: #040406;
-    width: 3rem;
-    font-size: 32px;
-    color: white;   
-    padding-bottom: 0px;
-    position: fixed;
-    flex-direction: column;
-    justify-content: flex-start;
-    left: -2.5rem;
-    transition: left 0.25s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5%;
+    align-items: center;
+}
+
+.menu-icons{
+    height: 2.3rem;
+    width: 2.3rem;;   
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+} 
+
+.navbar-text{
+    color: white;
+    font-size: 2.1rem;
+}
+
+.leftside{
+    color: #040406;
+    height: 100%;
+    width: 13%;
+    font-size: 2rem;
+    background-color: #FFFFFF;
+    border-right: 1px solid gray;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.leftside-menu:hover{
-    left: 0;
+#welcome-msg{
+    border-bottom: 1px solid #040406;
 }
 
+.foo{
+    display: flex;
+    flex-direction: row;   
+}
+.rightside {
+    text-align: center;
+    width: 85%;
+    height: 100%;
+}
 
-#welcome-message{
- font-size: 20px;
+.content{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
 }
 
 .calendar-icon{
@@ -52,8 +81,6 @@ html, body{
 /* Options menu styling -------------------------------------------------------------------------*/
 .options-icon{
     position: relative;
-    bottom: 0;
-    margin-bottom: 30px;
     transition: transform .7s ease-in-out;
     height: 1.7rem;
     width: 1.7rem;
@@ -61,21 +88,11 @@ html, body{
 }
 
 .logout-icon{
-    position: relative;
-    bottom: 0;
     height: 1.7rem;
     width: 1.7rem;
     cursor: pointer;
-    margin-bottom: 80px;
     margin: 10px;
 }
-
-.menu-icons{
-    height: 1.7rem;
-    width: 1.7rem;
-    margin: 10px;   
-    cursor: pointer;
-} 
 
 hr{
     margin-top: -5px;
@@ -328,16 +345,6 @@ a:active{
     color: white;
 }
 
-.rightside {
-    float: right;
-    text-align: center;
-    width: 99.6%;
-    height: 100%;
-}
-
-.btn {
-    width: 7rem;
-}
 
 .table {
     margin: 0;
@@ -350,8 +357,12 @@ a:active{
     width: 10rem;
     height: 2.5rem;
     font-size: 24px;
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid white;
     background-color: white;
+    margin-bottom: -3px;
 }
 
 .btn:hover{
@@ -360,23 +371,26 @@ a:active{
     box-sizing: border-box;
 }
 
-h3{
-    font-size: 32px;
-}
-
 th{
-    border-left: 3px solid  #040406 ;
-    border-right: 3px solid  #040406 ;
     width: 12.5%;
 }
 
-/* Animacje */
+.calendarCell:hover{
+    background-color: lightgrey;
+    transition: 0.1s ease-in-out;
+}
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+.card-header{
+    display: none;
+}
+
+select{
+    border: 0;
+    font-size: 3rem;
+    margin: 2rem;
+}
+
+option{
+    font-size: 1rem;
+
 }

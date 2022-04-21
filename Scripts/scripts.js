@@ -20,15 +20,15 @@ function capitalize(string){
 
 function updateButtons(){
     if (currentMonth === 0) {
-        document.getElementById('previous').innerText = "< "+months[11];
+        document.getElementById('previous').innerText = "<< "+months[11];
     }
     else 
-    {document.getElementById('previous').innerText = "< "+months[currentMonth-1];}
+    {document.getElementById('previous').innerText = "<< "+months[currentMonth-1];}
     if (currentMonth === 11) {
-        document.getElementById('next').innerText = months[0]+" >";
+        document.getElementById('next').innerText = months[0]+" >>";
     }
     else
-    {document.getElementById('next').innerText = months[currentMonth+1]+" >";}
+    {document.getElementById('next').innerText = months[currentMonth+1]+" >>";}
     if (currentMonth===11 && currentYear === 2030){
         document.getElementById('next').style.opacity= "0%";
         document.getElementById('next').disabled = true;
@@ -110,6 +110,7 @@ function showCalendar(month, year) {
             else {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(date);
+                cell.className = "calendarCell";
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
@@ -128,7 +129,7 @@ function showCalendar(month, year) {
 }
 
 
-// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
+// check how many days in a month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }
