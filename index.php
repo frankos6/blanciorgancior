@@ -19,7 +19,7 @@
     <script src="scripts/scripts.js" defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 </head>
-<body>
+<body class="preload">
     <div class="navbar-menu">
         <div class="foo">
             <img src="Images/calendar-icon.png" class="menu-icons"> 
