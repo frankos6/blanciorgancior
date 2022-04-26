@@ -69,9 +69,18 @@ function jump() {
     updateButtons();
 }
 
+function parseDate(input, format) {
+    format = format || 'dd-mm-yyyy';
+    var parts = input.match(/(\d+)/g), 
+        i = 0, fmt = {};
+    format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
+  
+    return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
+  }
+
 function showCalendar(month, year) {
 
-    let firstDay = (new Date(year, month)).getDay();
+    let firstDay = (new Date(year, month)).getDay()!=0 ? (new Date(year, month)).getDay() : 7;
 
     tbl = document.getElementById("calendar-body"); // body of the calendar
 
@@ -96,25 +105,35 @@ function showCalendar(month, year) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(daysInMonth(month-1,year)-firstDay+j+1);
                 cell.style.color = "lightgray";
+                cell.id = `${cellText.textContent}-${month==0 ? 12 : month}-${month==0 ? year-1 : year}`
+                cell.attributes.day = j;
+                cell.zadania = [];
+                cell.wydarzenia = [];
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
             else if (date > daysInMonth(month, year)) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(xd);
-                cell.id = `${xd++}-${month-1}-${year}`;
+                cell.id = `${xd++}-${month+2}-${year}`;
                 cell.style.color = "lightgray";
+                cell.attributes.day = j;
+                cell.zadania = [];
+                cell.wydarzenia = [];
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
             else {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(date);
-                cell.className = "calendarCell";
+                cell.classList.add("calendarCell");
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
-                cell.id = `${date}-${month+1}-${year}`
+                cell.attributes.day = j;
+                cell.id = `${date}-${month+1}-${year}`;
+                cell.zadania = [];
+                cell.wydarzenia = [];
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 date++;
@@ -126,9 +145,53 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
     }
 
+    wydarzenia.forEach(element => {
+        if (element.data.getMonth() === currentMonth && (element.data.getFullYear() === currentYear||element.powtarzanie === "year")){
+            x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
+            if (x!=null){
+                x.style.color = "red";
+                x.wydarzenia.push(element);
+            }
+            
+        }
+        if (element.powtarzanie === "month" && element.data.valueOf()<=(new Date(currentYear,currentMonth,1)).valueOf()){
+            x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
+            if (x!=null){
+                x.style.color = "red";
+                x.wydarzenia.push(element);
+            }
+        }
+        if (element.powtarzanie === "week" /* && element.data.valueOf()<=(new Date(currentYear,currentMonth,1)).valueOf()*/){
+            for (var tr of document.getElementById("calendar-body").children){
+                for (var td of tr.children){
+                    if (parseDate(td.id).getDay()==element.data.getDay()&&parseDate(td.id).valueOf()>=element.data.valueOf()){
+                        td.style.color = "red";
+                        td.wydarzenia.push(element);
+                    }
+                }
+            }
+        }
+    });
+    zadania.forEach(element => {
+        if (element.data.getMonth() === currentMonth){
+            x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
+            if (x!=null){
+                if (x.style.color === ""){
+                    x.style.color = "blue"
+                }
+                else {
+                    x.style.backgroundColor = "blue";
+                }
+                x.zadania.push(element)
+            }
+            
+        }
+    });
+
 }
 
-// check how many days in a month
+
+// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }
