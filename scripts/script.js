@@ -16,3 +16,7 @@ function colorChange(color) {
 function logout(){
     location.href = "login.php"
 }
+
+setTimeout(function(){
+    document.body.className="";
+},500);
