@@ -418,3 +418,21 @@ label{
 #temp{
     margin-top: -1rem;
 }
+
+/* Animacje */
+@keyframes appear{
+    0%{width: 12%;}
+    50%{width: 25%;}
+    100%{width: 20%;}
+}
+
+@keyframes appearText{
+    0%{opacity: 0%;}
+    50%{opacity: 50%;}
+    100%{opacity: 100%;}
+}
+
+body.preload *{
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
