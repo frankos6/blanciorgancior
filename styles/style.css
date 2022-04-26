@@ -47,6 +47,7 @@ html, body{
 
 #welcome-msg{
     border-bottom: 1px solid #040406;
+    animation: appearText 0.2s ease-in;
 }
 
 hr{
@@ -69,6 +70,7 @@ hr{
     height: 95%;
     display: flex;
     flex-direction: row;
+    animation: appearText 0.5s ease-in;
 }
 
 .calendar-icon{
@@ -136,6 +138,7 @@ hr{
     background-color: #040406;
     box-sizing: border-box;
     padding: 2rem;
+    animation: appear 0.5s ease-in-out;
 }
 
 .close-button{
@@ -351,7 +354,7 @@ th{
 
 .calendarCell:hover{
     background-color: lightgrey;
-    transition: 0.1s ease-in-out;
+    transition: 0.1s ease-out;
 }
 
 .card-header{
