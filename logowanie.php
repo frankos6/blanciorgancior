@@ -1,5 +1,7 @@
 <?php 
     session_start();
+    error_reporting(0);
+    ini_set('display_errors', 0);
     require 'login.php';
     if(!isset($_POST['Password'])){
     echo "<script> window.onload = document.getElementById('error-msg').innerHTML = ''; </script>";

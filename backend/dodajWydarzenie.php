@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
 </head>
 <body>
     <?php
         require('connection.php');
     ?>
-    <form action="." method="post">
-        <label for="nazwa">Nazwa</label>
-        <input type="text" name="nazwa" required><br>
-        <label for="data">Termin</label>
-        <input type="date" name="data" required><br>
-        <label for="opis">Opis</label>
-        <textarea name="opis"></textarea><br>
-        <label for="waga">Powtarzaj co</label>
-        <select name="powtarzanie">
-            <option value="NULL">---</option>
-            <option value="week">tydzień</option>
-            <option value="month">miesiąc</option>
-            <option value="year">rok</option>
-        </select><br>
-        <label for="kalendarz">Kalendarz</label>
-        <select name="kalendarz" id="kalendarz">
-
-        </select>
+    <form action="." method="post" class="form">
+            <label for="nazwa">Nazwa</label>
+            <input type="text" name="nazwa" required class="form-input" placeholder="Nazwa Wydarzenia"><br>
+            <label for="data">Termin</label>
+            <input type="datetime-local" name="data" required class="form-input" id="datetime-form"><br>
+            <label for="waga">Powtarzaj co</label>
+            <select name="powtarzanie" class="form-select">
+                <option value="NULL">Nie powtarzaj</option>
+                <option value="week">Tydzień</option>
+                <option value="month">Miesiąc</option>
+                <option value="year">Rok</option>
+            </select><br>
+            <label for="kalendarz">Kalendarz</label>
+                <select name="kalendarz" id="kalendarz" class="form-select">
+            </select>
+        <button type="submit" class="login-form-button"> <span>Potwierdź</span> </button>
     </form>
     <script>
         const kalendarzSelect = document.getElementById('kalendarz');
