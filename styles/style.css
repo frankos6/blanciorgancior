@@ -35,7 +35,7 @@ html, body{
 .leftside{
     color: #040406;
     height: 100%;
-    width: 13%;
+    width: 17%;
     font-size: 2rem;
     background-color: #FFFFFF;
     border-right: 1px solid gray;
@@ -43,11 +43,20 @@ html, body{
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    transition: 0.5s;
+}
+
+#date-display{
+    text-align: center;
+    font-size: 1.5rem;
+    animation: appearText 1s ease-in;
+    margin-top: 0;
 }
 
 #welcome-msg{
     border-bottom: 1px solid #040406;
-    animation: appearText 0.2s ease-in;
+    animation: appearText 1s ease-in;
+    margin-bottom: -10;
 }
 
 hr{
@@ -70,7 +79,6 @@ hr{
     height: 95%;
     display: flex;
     flex-direction: row;
-    animation: appearText 0.5s ease-in;
 }
 
 .calendar-icon{
@@ -310,7 +318,7 @@ a:active{
 
 .register-text{
     font-size: 16px;
-    margin-top: 6rem;
+    margin-top: 2rem;
     margin-bottom: -0.5rem;
     font-weight: 600;
 }
@@ -331,7 +339,7 @@ iframe{
 }
 
 .btn{
-    width: 10rem;
+    width: 11rem;
     height: 2.5rem;
     font-size: 24px;
     border-top: none;
@@ -350,11 +358,19 @@ iframe{
 
 th{
     width: 12.5%;
+    margin: 20px;
 }
 
 .calendarCell:hover{
-    background-color: lightgrey;
-    transition: 0.1s ease-out;
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.2s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+td{
+    text-align: center;
 }
 
 .card-header{
@@ -370,6 +386,7 @@ select{
 option{
     font-size: 1rem;
 }
+
 
 /* ========================================================================================================================================================================*/
 /* Adding event form ------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -422,7 +439,79 @@ label{
     margin-top: -1rem;
 }
 
+/* ========================================================================================================================================================================*/
+/* Assignments display ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ========================================================================================================================================================================*/
+
+/* ========================================================================================================================================================================*/
+/* Dark mode switch -------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ========================================================================================================================================================================*/
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    bottom: 0;
+    left: 0;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: darkgray;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px darkgray;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
 /* Animacje */
+
 @keyframes appear{
     0%{width: 12%;}
     50%{width: 25%;}
@@ -435,7 +524,9 @@ label{
     100%{opacity: 100%;}
 }
 
-body.preload *{
-    animation-duration: 0s !important;
-    -webkit-animation-duration: 0s !important;
-    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+
+.dark-mode{
+    background-color: #121212;
+    color: white;
+    transition: 0.5s;
+}

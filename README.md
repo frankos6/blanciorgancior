@@ -1,11 +1,7 @@
-Projekt do G.E 
-<br>
-Powrót 13.05.2023r.
-<br>
-Co potrafi: <br>
-  -Wyświetlić kalendarz <br>
-  -Nic
-<br>
-<br>
-<br>
-Pozdrawiamy. Zarząd
+# Kalendarz BGT 
+Projekt do G.E
+J.G.E
+BGT Flexiki 20:00 Codziennie stream
+twitch.tv/nervarien
+Jutro
+Powrót

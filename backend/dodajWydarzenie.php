@@ -10,7 +10,6 @@
 <body>
     <?php
         require('connection.php');
-        
         if (isset($_POST['nazwa'])) {
             $q = "INSERT INTO wydarzenia(`nazwa`,`data`,`powtarzanie`,`kalendarz_id`) VALUES ('".$_POST['nazwa']."','".$_POST['data']."','".$_POST['powtarzanie']."','".$_POST['kalendarz']."')";
             $result = $conn->query($q);

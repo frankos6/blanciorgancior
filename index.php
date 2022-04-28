@@ -2,6 +2,7 @@
     if(!isset($_SESSION['Imie'])){
         header("Location: login.php");
     }
+    require("backend\connection.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" defer></script>
     <script src="scripts/scripts.js" defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
 </head>
@@ -30,10 +31,18 @@
         <img src="Images/logout-icon.png" class="menu-icons" onclick="logout()" title="Wyloguj się">
         </div>
     </div>
-    <div class="content">
+    <div class="content" id="calendar-surface">
         <div class="leftside" id="leftside">
             <p id="welcome-msg">Witaj, <?php echo $_SESSION['Imie']?></p>
-        </div>
+            <p id="date-display"></br></p>
+
+            <div class="assignment-display">
+            </div>
+                <label class="switch">
+                    <input type="checkbox" id="checkbox"  onclick="darkMode()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         <div class="rightside">
             <h3 class="card-header" id="monthAndYear"></h3>
             <form class="form-inline">
@@ -64,16 +73,16 @@
                 <option value=2030>2030</option>
             </select></form>
             <table class="table table-bordered table-responsive-sm" id="calendar">
-                <thead>
-                <tr>
-                    <th>Poniedziałek</th>
-                    <th>Wtorek</th>
-                    <th>Środa</th>
-                    <th>Czwartek</th>
-                    <th>Piątek</th>
-                    <th>Sobota</th>
-                    <th>Niedziela</th>
-                </tr>
+                <thead id="table-head">
+                    <tr>
+                        <th>Poniedziałek</th>
+                        <th>Wtorek</th>
+                        <th>Środa</th>
+                        <th>Czwartek</th>
+                        <th>Piątek</th>
+                        <th>Sobota</th>
+                        <th>Niedziela</th>
+                    </tr>
                 </thead>
 
                 <tbody id="calendar-body">
@@ -86,12 +95,10 @@
 
                 <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
             </div>
-            <br/>
-            <form class="form-inline">
         </div>
     </div>
     <div class="options-menu" id="options-menu">
-        <div class="overlay">
+        <div class="overlay" class="w3-container w3-center w3-animate-top">
             <iframe src="backend/dodajWydarzenie.php" width="100%" height="100%"></iframe>
             <button class="login-form-button" onclick="off()" id="temp"><span>Anuluj</span></button>
         </div>
