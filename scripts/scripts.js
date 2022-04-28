@@ -107,6 +107,7 @@ function showCalendar(month, year) {
                 cell.style.color = "lightgray";
                 cell.id = `${cellText.textContent}-${month==0 ? 12 : month}-${month==0 ? year-1 : year}`
                 cell.attributes.day = j;
+                cell.classList.add("calendarCell");
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
@@ -115,6 +116,7 @@ function showCalendar(month, year) {
             else if (date > daysInMonth(month, year)) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(xd);
+                cell.classList.add("calendarCell");
                 cell.id = `${xd++}-${month+2}-${year}`;
                 cell.style.color = "lightgray";
                 cell.attributes.day = j;
@@ -126,6 +128,7 @@ function showCalendar(month, year) {
             else {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(date);
+                cell.classList.add("calendarCell");
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
                 } // color today's date
