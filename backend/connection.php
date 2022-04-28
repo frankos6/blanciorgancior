@@ -1,31 +1,38 @@
 <?php
 $conn = new mysqli('localhost','root','','kalendarz');
-// if (isset($_SESSION['Imie']) && str_contains($_SERVER['PHP_SELF'],"login.php")){
-//     $user_name = $_SESSION['Imie'];
-// }
-// else{
-//     header("Location: /login.php");
-// }
-// $q = "SELECT id from users WHERE username = $user_name ";
-// $result = $conn->query($q);
+//if (isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
+//    $user_name = $_SESSION['Imie'];
+//}
+//else if(!isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
+//    sleep(0.1);
+//}
+//else{
+    //header("Location: /login.php");
+//}
+if (isset($_SESSION['Imie'])){
+    $user_name = $_SESSION['Imie'];
+}
+else {
+    $user_name = "";
+}
+$q = "SELECT id from users WHERE username = $user_name";
+$result = $conn->query($q);
 ?>
 <script>
     class Zadanie
     {
-        constructor(nazwa,data,opis,waga,kalendarz_id){
+        constructor(nazwa,data,waga,kalendarz_id){
             this.nazwa = nazwa;
             this.data = new Date(data);
-            this.opis = opis;
             this.waga = waga;
             this.kalendarz_id = kalendarz_id;
         }
     }
     class Wydarzenie
     {
-        constructor(nazwa,data,opis,powtarzanie,kalendarz_id){
+        constructor(nazwa,data,powtarzanie,kalendarz_id){
             this.nazwa = nazwa;
             this.data = new Date(data);
-            this.opis = opis;
             this.powtarzanie = powtarzanie;
             this.kalendarz_id = kalendarz_id;
         }
@@ -51,27 +58,23 @@ $conn = new mysqli('localhost','root','','kalendarz');
     $i = 0;
     while($obj = $result->fetch_object())
     {
-        echo "zadania.push(new Zadanie('$obj->nazwa','$obj->data','$obj->opis','$obj->waga',$obj->kalendarz_id))";
+        echo "zadania.push(new Zadanie('$obj->nazwa','$obj->data','$obj->waga',$obj->kalendarz_id));";
     }
-    echo '</script>';
     // kalendarze baza -> js
     $q = 'SELECT * FROM kalendarze';
     $result = $conn->query($q);
-    echo '<script>';
     $i = 0;
     while($obj = $result->fetch_object())
     {
-        echo "kalendarze.push(new Kalendarz($obj->id,'$obj->kolor','$obj->nazwa',$obj->user_id))";
+        echo "kalendarze.push(new Kalendarz($obj->id,'$obj->kolor','$obj->nazwa',$obj->user_id));";
     }
-    echo '</script>';
     // wydarzenia baza -> js
     $q = 'SELECT * FROM wydarzenia';
     $result = $conn->query($q);
-    echo '<script>';
     $i = 0;
     while($obj = $result->fetch_object())
     {
-        echo "wydarzenia.push(new Wydarzenie('$obj->nazwa','$obj->data','$obj->opis','$obj->powtarzanie',$obj->kalendarz_id))";
+        echo "wydarzenia.push(new Wydarzenie('$obj->nazwa','$obj->data','$obj->powtarzanie',$obj->kalendarz_id));";
     }
     echo '</script>';
 ?>

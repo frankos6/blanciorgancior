@@ -9,22 +9,31 @@
 <body>
     <?php
         require('connection.php');
+        if (isset($_POST['nazwa'])){
+            $q = "INSERT INTO zadania(`nazwa`,`data`,`waga`,`kalendarz_id`) VALUES ('".$_POST['nazwa']."','".$_POST['data']."','".$_POST['wagi']."','".$_POST['kalendarz']."')";
+            $result = $conn->query($q);
+            if ($result){
+                echo "Pomyślnie dodano zadanie.";
+            }
+            else {
+                echo "Błąd przy dodawaniu zadania.";
+            }
+            die();
+        }
     ?>
-    <form action="." method="post">
+    <form method="post">
         <label for="nazwa">Nazwa</label>
         <input type="text" name="nazwa" required><br>
         <label for="data">Termin</label>
         <input type="date" name="data" required><br>
-        <label for="opis">Opis</label>
-        <textarea name="opis"></textarea><br>
         <label for="waga">Waga</label>
-        <select name="wagi">
+        <select name="wagi" required>
             <option value="normal">Normalne</option>
             <option value="high">Ważne</option>
             <option value="veryhigh">Bardzo ważne</option>
         </select><br>
         <label for="kalendarz">Kalendarz</label>
-        <select name="kalendarz" id="kalendarz">
+        <select name="kalendarz" id="kalendarz" required>
 
         </select>
     </form>
@@ -32,7 +41,7 @@
         const kalendarzSelect = document.getElementById('kalendarz');
         kalendarze.forEach(element => {
             var option = document.createElement("option");
-            option.attributes.value = element.id;
+            option.value = element.id;
             var text = document.createTextNode(element.nazwa);
             option.style.color = element.kolor;
             option.appendChild(text)
