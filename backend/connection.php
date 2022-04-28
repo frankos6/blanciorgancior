@@ -1,5 +1,4 @@
 <?php
-session_start();
 $conn = new mysqli('localhost','root','','kalendarz');
 // if (isset($_SESSION['Imie']) && str_contains($_SERVER['PHP_SELF'],"login.php")){
 //     $user_name = $_SESSION['Imie'];

@@ -20,15 +20,15 @@ function capitalize(string){
 
 function updateButtons(){
     if (currentMonth === 0) {
-        document.getElementById('previous').innerText = "< "+months[11];
+        document.getElementById('previous').innerText = "<< "+months[11];
     }
     else 
-    {document.getElementById('previous').innerText = "< "+months[currentMonth-1];}
+    {document.getElementById('previous').innerText = "<< "+months[currentMonth-1];}
     if (currentMonth === 11) {
-        document.getElementById('next').innerText = months[0]+" >";
+        document.getElementById('next').innerText = months[0]+" >>";
     }
     else
-    {document.getElementById('next').innerText = months[currentMonth+1]+" >";}
+    {document.getElementById('next').innerText = months[currentMonth+1]+" >>";}
     if (currentMonth===11 && currentYear === 2030){
         document.getElementById('next').style.opacity= "0%";
         document.getElementById('next').disabled = true;
@@ -107,7 +107,6 @@ function showCalendar(month, year) {
                 cell.style.color = "lightgray";
                 cell.id = `${cellText.textContent}-${month==0 ? 12 : month}-${month==0 ? year-1 : year}`
                 cell.attributes.day = j;
-                cell.classList.add("calendarCell");
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
@@ -116,7 +115,6 @@ function showCalendar(month, year) {
             else if (date > daysInMonth(month, year)) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(xd);
-                cell.classList.add("calendarCell");
                 cell.id = `${xd++}-${month+2}-${year}`;
                 cell.style.color = "lightgray";
                 cell.attributes.day = j;
@@ -193,7 +191,7 @@ function showCalendar(month, year) {
 }
 
 
-// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
+// check how many days in a month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }
