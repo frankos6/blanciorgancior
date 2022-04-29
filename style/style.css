@@ -20,10 +20,6 @@ body:hover{
   font-size: 36px;
 }
 
-.content:hover{
- animation: spin 720s;
-}
-
 .content{
   text-align: center;
   animation: neonAnim 1.5s alternate-reverse infinite;
