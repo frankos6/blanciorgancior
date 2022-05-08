@@ -104,7 +104,6 @@ function showCalendar(month, year) {
             if (i === 0 && j < firstDay) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(daysInMonth(month-1,year)-firstDay+j+1);
-                cell.style.color = "lightgray";
                 cell.id = `${cellText.textContent}-${month==0 ? 12 : month}-${month==0 ? year-1 : year}`
                 cell.attributes.day = j;
                 cell.zadania = [];
@@ -116,7 +115,6 @@ function showCalendar(month, year) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(xd);
                 cell.id = `${xd++}-${month+2}-${year}`;
-                cell.style.color = "lightgray";
                 cell.attributes.day = j;
                 cell.zadania = [];
                 cell.wydarzenia = [];

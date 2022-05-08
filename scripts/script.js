@@ -17,9 +17,8 @@ Data = Data.split(",")[0];
 console.log(Data);
 document.getElementById('date-display').innerHTML += Data;
 
-var body = document.getElementById('calendar-surface');
-var th = document.getElementById('table-head');
-var callcell = document.getElementsByClassName('calendarCell');
+var DataId = Data.replaceAll('.', '-');
+console.log(DataId);
 
 function darkMode(){
     console.log('dzialam')
@@ -28,6 +27,6 @@ function darkMode(){
     callcell.classList.toggle("dark-mode");
 }
 
-var DataId = Data.replaceAll('.', '-');
-
-console.log(DataId);
+var body = document.getElementById('calendar-surface');
+var th = document.getElementById('table-head');
+var callcell = document.getElementsByClassName('calendarCell');

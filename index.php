@@ -100,7 +100,7 @@
     <div class="options-menu" id="options-menu">
         <div class="overlay" class="w3-container w3-center w3-animate-top">
             <iframe src="backend/dodajWydarzenie.php" width="100%" height="100%"></iframe>
-            <button class="login-form-button" onclick="off()" id="temp"><span>Anuluj</span></button>
+            <button class="login-form-button" id="important" onclick="off()" id="temp"><span>Anuluj</span></button>
         </div>
     </div>
 </body>

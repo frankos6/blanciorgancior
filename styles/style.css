@@ -9,7 +9,7 @@ html, body{
 /* Main Page --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* ========================================================================================================================================================================*/
 .navbar-menu{
-    background-color: #040406;
+    background-color: #1f1f1f;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,12 +33,11 @@ html, body{
 
 
 .leftside{
-    color: #040406;
+    color: white;
     height: 100%;
-    width: 17%;
+    width: 15%;
     font-size: 2rem;
-    background-color: #FFFFFF;
-    border-right: 1px solid gray;
+    background-color: #141414;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,10 +56,7 @@ html, body{
     border-bottom: 1px solid #040406;
     animation: appearText 1s ease-in;
     margin-bottom: -10;
-}
-
-hr{
-    margin-top: -5px;
+    border-bottom: 1px solid white;
 }
 
 .foo{
@@ -72,6 +68,8 @@ hr{
     text-align: center;
     width: 85%;
     height: 100%;
+    background-color: #121212;
+    color: #050505;
 }
 
 .content{
@@ -143,7 +141,7 @@ hr{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #040406;
+    background-color: #141414;
     box-sizing: border-box;
     padding: 2rem;
     animation: appear 0.5s ease-in-out;
@@ -281,9 +279,13 @@ a:active{
     margin-top: 2rem;
 }
 
+#important{    
+    background-color: #141414 !important;
+}
+
 ::placeholder{
     font-style: italic;
-    opacity: 25%;
+    opacity: 55%;
 }
 
 .login-form-button span {
@@ -345,13 +347,14 @@ iframe{
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 3px solid white;
-    background-color: white;
+    border-bottom: 3px solid #121212;
+    background-color: #121212;
+    color: white;
     margin-bottom: -3px;
 }
 
 .btn:hover{
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
     transition: 0.1s ease-in-out;
     box-sizing: border-box;
 }
@@ -359,10 +362,16 @@ iframe{
 th{
     width: 12.5%;
     margin: 20px;
+    color: white;
+}
+
+.calendarCell{
+    color: white;
+    opacity: 100%;
 }
 
 .calendarCell:hover{
-    background-color:white;
+    background-color: #1f1f1f;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.2s ease-in-out;
     box-sizing: border-box;
@@ -371,6 +380,8 @@ th{
 
 td{
     text-align: center;
+    color: darkgray;
+    opacity: 50%;
 }
 
 .card-header{
@@ -378,9 +389,11 @@ td{
 }
 
 select{
-    border: 0;
     font-size: 3rem;
     margin: 2rem;
+    background-color: #121212;
+    color: #FFFFFF;
+    border: none;
 }
 
 option{
@@ -397,13 +410,13 @@ option{
     flex-direction: column;
     justify-content: center;
     color: white;
-    
+    background-color: #141414;
 }
 
 .form-select{
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 65%;
-    background-color: #040406;
+    background-color: #141414;
     color: white;
     border-bottom: 1px solid white;
     margin: auto;
@@ -417,7 +430,7 @@ label{
 }
 
 .form-input{
-    background-color: #040406;
+    background-color: #141414;
     border: 0;
     border-bottom: 1px solid white;
     height: 2.3rem;
@@ -523,7 +536,6 @@ input:checked + .slider:before {
     50%{opacity: 50%;}
     100%{opacity: 100%;}
 }
-
 
 .dark-mode{
     background-color: #121212;

@@ -15,6 +15,7 @@
             $result = $conn->query($q);
             if ($result){
                 echo "Pomyślnie dodano wydarzenie.";
+                echo "<script>window.parent.location.reload();</script>";
             }
             else {
                 echo "Błąd przy dodawaniu wydarzenia.";
@@ -38,7 +39,7 @@
             <select name="kalendarz" id="kalendarz" class="form-select">
 
             </select>
-        <button type="submit" class="login-form-button"> <span>Potwierdź</span> </button>
+        <button type="submit" class="login-form-button" id="important"> <span>Potwierdź</span> </button>
     </form>
     <script>
         const kalendarzSelect = document.getElementById('kalendarz');
