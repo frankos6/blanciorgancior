@@ -25,7 +25,7 @@ function updateButtons(){
     else 
     {document.getElementById('previous').innerText = "<< ";}
     if (currentMonth === 11) {
-        document.getElementById('next').innerText =" >>";
+        document.getElementById('next').innerText = " >>";
     }
     else
     {document.getElementById('next').innerText = " >>";}
@@ -73,9 +73,17 @@ function parseDate(input, format) {
     format = format || 'dd-mm-yyyy';
     var parts = input.match(/(\d+)/g), 
         i = 0, fmt = {};
-    format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
-  
-    return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
+    format.replace(/(yyyy|dd|mm)/g, part => { fmt[part] = i++; });
+    try {
+        return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
+    }
+    catch (e) {
+        if (e.name === "TypeError"){
+            console.error("Invalid date/format");
+            return null;
+        }
+        else throw e;
+    }
   }
 
 function showCalendar(month, year) {
@@ -104,39 +112,44 @@ function showCalendar(month, year) {
             if (i === 0 && j < firstDay) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(daysInMonth(month-1,year)-firstDay+j+1);
+                cell.style.color = "lightgray";
                 cell.id = `${cellText.textContent}-${month==0 ? 12 : month}-${month==0 ? year-1 : year}`
                 cell.attributes.day = j;
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
+                cell.addEventListener('click',displayDayInfo);
                 row.appendChild(cell);
             }
             else if (date > daysInMonth(month, year)) {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(xd);
                 cell.id = `${xd++}-${month+2}-${year}`;
+                cell.style.color = "lightgray";
                 cell.attributes.day = j;
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
+                cell.addEventListener('click',displayDayInfo)
                 row.appendChild(cell);
             }
             else {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(date);
-                cell.classList.add("calendarCell");
-                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    cell.classList.add("bg-info");
-                } // color today's date
                 cell.attributes.day = j;
                 cell.id = `${date}-${month+1}-${year}`;
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
+                cell.addEventListener('click',displayDayInfo)
+                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                    cell.classList.add("bg-info");
+                    cell.click();
+                } // color today's date
                 row.appendChild(cell);
                 date++;
             }
-
+            
 
         }
 
@@ -145,7 +158,7 @@ function showCalendar(month, year) {
 
     wydarzenia.forEach(element => {
         if (element.data.getMonth() === currentMonth && (element.data.getFullYear() === currentYear||element.powtarzanie === "year")){
-            x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
+            var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
                 x.style.color = "red";
                 x.wydarzenia.push(element);
@@ -153,7 +166,7 @@ function showCalendar(month, year) {
             
         }
         if (element.powtarzanie === "month" && element.data.valueOf()<=(new Date(currentYear,currentMonth,1)).valueOf()){
-            x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
+            var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
                 x.style.color = "red";
                 x.wydarzenia.push(element);
@@ -172,7 +185,7 @@ function showCalendar(month, year) {
     });
     zadania.forEach(element => {
         if (element.data.getMonth() === currentMonth){
-            x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
+            var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
                 if (x.style.color === ""){
                     x.style.color = "blue"
@@ -189,7 +202,43 @@ function showCalendar(month, year) {
 }
 
 
-// check how many days in a month
+// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
+}
+
+function displayDayInfo(event) {
+    document.getElementById("date-display").innerHTML = parseDate(event.currentTarget.id).toLocaleDateString();
+    var targetDiv = document.getElementById('assignments');
+    targetDiv.innerHTML = "";
+    if (event.currentTarget.zadania.length > 0){
+        var ul = document.createElement('ul');
+        event.currentTarget.zadania.forEach(element => {
+            var li = document.createElement('li');
+            li.innerHTML = element.nazwa;
+            ul.appendChild(li);
+        });
+        targetDiv.appendChild(ul);
+    }
+    else {
+        var div1 = document.createElement("div");
+        div1.innerHTML = "Brak zadań tego dnia.";
+        targetDiv.appendChild(div1);
+    }
+    var hr = document.createElement("hr");
+    targetDiv.appendChild(hr);
+    if (event.currentTarget.wydarzenia.length > 0){
+        var ul = document.createElement('ul');
+        event.currentTarget.wydarzenia.forEach(element => {
+            var li = document.createElement('li');
+            li.innerHTML = element.nazwa + " | " + element.data.toLocaleTimeString("pl",{hour: '2-digit', minute:'2-digit'});
+            ul.appendChild(li);
+        });
+        targetDiv.appendChild(ul);
+    }
+    else {
+        var div2 = document.createElement("div");
+        div2.innerHTML = "Brak wydarzeń tego dnia.";
+        targetDiv.appendChild(div2);
+    }
 }
