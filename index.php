@@ -33,8 +33,8 @@
                 <span class="slider round"></span>
             </label> -->
             <div class="add-buttons">
-                <button class="add-button" title="Dodaj zadanie" onclick="addTaskForm()"> Dodaj Zadanie  + </button>
                 <button class="add-button" title="Dodaj wydarzenie" onclick="addEventForm()">Dodaj Wydarzenie + </button>
+                <button class="add-button" title="Dodaj zadanie" onclick="addTaskForm()"> Dodaj Zadanie  + </button>
          </div>
         </div>
         <div class="rightside">

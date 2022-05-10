@@ -1,25 +1,24 @@
 <?php
 $conn = new mysqli('localhost','root','','kalendarz');
-// if (isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
-//     $user_name = $_SESSION['Imie'];
-// }
-// else if(!isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
-//     sleep(0.1);
-// }
-// else{
-//     header("Location: login.php");
-// }
-
+//if (isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
+//    $user_name = $_SESSION['Imie'];
+//}
+//else if(!isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
+//    sleep(0.1);
+//}
+//else{
+    //header("Location: /login.php");
+//}
 if (isset($_SESSION['Imie'])){
     $user_name = $_SESSION['Imie'];
 }
 else {
     $user_name = "";
 }
-
-$q = "SELECT id from users WHERE username = '$user_name'";
+$q = "SELECT id from users WHERE username = '".$user_name."'";
 $result = $conn->query($q);
-
+$obj = $result->fetch_row();
+$_SESSION['user_id'] = $obj[0];
 ?>
 <script>
     class Zadanie
@@ -64,7 +63,7 @@ $result = $conn->query($q);
         echo "zadania.push(new Zadanie('$obj->nazwa','$obj->data','$obj->waga',$obj->kalendarz_id));";
     }
     // kalendarze baza -> js
-    $q = 'SELECT * FROM kalendarze';
+    $q = 'SELECT * FROM kalendarze WHERE user_id = "'.$_SESSION['user_id'].'"';
     $result = $conn->query($q);
     $i = 0;
     while($obj = $result->fetch_object())

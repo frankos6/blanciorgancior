@@ -9,45 +9,45 @@
 </head>
 <body>
     <?php
-        require('connection.php');                                              // Połączenie z bazą danych
+        require('connection.php');
+        
         if (isset($_POST['nazwa'])) {
             $q = "INSERT INTO wydarzenia(`nazwa`,`data`,`powtarzanie`,`kalendarz_id`) VALUES ('".$_POST['nazwa']."','".$_POST['data']."','".$_POST['powtarzanie']."','".$_POST['kalendarz']."')";
-            $result = $conn->query($q);                                         //Query dodawania zadania
+            $result = $conn->query($q);
             if ($result){
-                echo "Pomyślnie dodano wydarzenie.";                            // Sprawdzanie czy query się poprawnie wykonało
-                echo "<script>window.parent.location.reload();</script>";       //Powrót na stronę główną w przypadku pomyślnego dodania
+                echo "Pomyślnie dodano wydarzenie.";
             }
             else {
-                echo "Błąd przy dodawaniu wydarzenia.";                         // I wyświetlanie stosownej wiadomości
+                echo "Błąd przy dodawaniu wydarzenia.";
             }
             die();
         }
     ?>
     <form method="post" class="form">
-        <label for="nazwa">Nazwa</label>
+            <label for="nazwa">Nazwa</label>
             <input type="text" name="nazwa" required class="form-input" placeholder="Nazwa Wydarzenia"><br>
-        <label for="data">Termin</label>
+            <label for="data">Termin</label>
             <input type="datetime-local" name="data" required class="form-input" id="datetime-form"><br>
-        <label for="waga">Powtarzaj co</label>
+            <label for="waga">Powtarzaj co</label>
             <select name="powtarzanie" class="form-select">
                 <option value="NULL">Nie powtarzaj</option>
                 <option value="week">Tydzień</option>
                 <option value="month">Miesiąc</option>
                 <option value="year">Rok</option>
             </select><br>
-        <label for="kalendarz">Kalendarz</label>
-        <select name="kalendarz" id="kalendarz" class="form-select">
+            <label for="kalendarz">Kalendarz</label>
+            <select name="kalendarz" id="kalendarz" class="form-select">
 
-        </select>
-        <button type="submit" class="login-form-button" id="important"> <span>Dodaj</span> </button>
+            </select>
+        <button type="submit" class="login-form-button"> <span>Potwierdź</span> </button>
     </form>
     <script>
-        const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
+        const kalendarzSelect = document.getElementById('kalendarz');
         kalendarze.forEach(element => {
             var option = document.createElement("option");
-                option.value = element.id;
+            option.value = element.id;
             var text = document.createTextNode(element.nazwa);
-                option.style.color = element.kolor;
+            option.style.color = element.kolor;
             option.appendChild(text)
             kalendarzSelect.appendChild(option);
         });
