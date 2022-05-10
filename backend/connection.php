@@ -1,25 +1,22 @@
 <?php
 $conn = new mysqli('localhost','root','','kalendarz');
-// if (isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
-//     $user_name = $_SESSION['Imie'];
-// }
-// else if(!isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
-//     sleep(0.1);
-// }
-// else{
-//     header("Location: login.php");
-// }
-
+//if (isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
+//    $user_name = $_SESSION['Imie'];
+//}
+//else if(!isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
+//    sleep(0.1);
+//}
+//else{
+    //header("Location: /login.php");
+//}
 if (isset($_SESSION['Imie'])){
     $user_name = $_SESSION['Imie'];
 }
 else {
     $user_name = "";
 }
-
-$q = "SELECT id from users WHERE username = '$user_name'";
+$q = "SELECT id from users WHERE username = $user_name";
 $result = $conn->query($q);
-
 ?>
 <script>
     class Zadanie
