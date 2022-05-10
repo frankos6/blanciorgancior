@@ -25,7 +25,7 @@
         <div class="leftside" id="leftside">
             <p id="welcome-msg">Witaj, <?php echo $_SESSION['Imie']?></p>
             <p id="date-display"></br></p>
-            <div class="assignment-display">
+            <div id="assignments" class="assignment-display">
             </div>
             <img src="Images/logout-icon.png" class="logout-icon" onclick="logout()" title="Wyloguj się">
             <!-- <label class="switch">
