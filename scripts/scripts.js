@@ -20,15 +20,15 @@ function capitalize(string){
 
 function updateButtons(){
     if (currentMonth === 0) {
-        document.getElementById('previous').innerText = "< "+months[11];
+        document.getElementById('previous').innerText = "<< ";
     }
     else 
-    {document.getElementById('previous').innerText = "< "+months[currentMonth-1];}
+    {document.getElementById('previous').innerText = "<< ";}
     if (currentMonth === 11) {
-        document.getElementById('next').innerText = months[0]+" >";
+        document.getElementById('next').innerText = " >>";
     }
     else
-    {document.getElementById('next').innerText = months[currentMonth+1]+" >";}
+    {document.getElementById('next').innerText = " >>";}
     if (currentMonth===11 && currentYear === 2030){
         document.getElementById('next').style.opacity= "0%";
         document.getElementById('next').disabled = true;
