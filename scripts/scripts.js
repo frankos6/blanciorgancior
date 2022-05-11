@@ -157,13 +157,20 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
     }
 
-    color = "yellow";
+    color = "yellow"; //default
 
     wydarzenia.forEach(element => {
+        temp = kalendarze.find(x => x.id === element.kalendarz_id); // color = kolor kalendarza
+        if (temp === undefined){
+            color = "yellow"; //default
+        }
+        else {
+            color = temp.kolor;
+        }
         if (element.data.getMonth() === currentMonth && (element.data.getFullYear() === currentYear||element.powtarzanie === "year")){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
-                x.style.color = color;
+                x.style.color = color; 
                 x.wydarzenia.push(element);
             }
             
@@ -187,6 +194,13 @@ function showCalendar(month, year) {
         }
     });
     zadania.forEach(element => {
+        temp = kalendarze.find(x => x.id === element.kalendarz_id);
+        if (temp === undefined){
+            color = "yellow"; //default
+        }
+        else {
+            color = temp.kolor;
+        }
         if (element.data.getMonth() === currentMonth){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
@@ -209,7 +223,7 @@ function displayDayInfo(event) {
     document.getElementById("date-display").innerHTML = parseDate(event.currentTarget.id).toLocaleDateString();
     var targetDiv = document.getElementById('assignments');
     targetDiv.innerHTML = "";
-    if (event.currentTarget.zadania.length > 0){
+    if (event.currentTarget.zadania.length > 0){                                                                // lista zadań
         var ul = document.createElement('ul');
         event.currentTarget.zadania.forEach(element => {
             var li = document.createElement('li');
@@ -225,7 +239,7 @@ function displayDayInfo(event) {
     }
     var hr = document.createElement("hr");
     targetDiv.appendChild(hr);
-    if (event.currentTarget.wydarzenia.length > 0){
+    if (event.currentTarget.wydarzenia.length > 0){                                                             // lista wydarzeń
         var ul = document.createElement('ul');
         event.currentTarget.wydarzenia.forEach(element => {
             var li = document.createElement('li');
@@ -238,5 +252,15 @@ function displayDayInfo(event) {
         var div2 = document.createElement("div");
         div2.innerHTML = "Brak wydarzeń tego dnia.";
         targetDiv.appendChild(div2);
+    }
+    clearClickedClass();
+    event.currentTarget.classList.add("calendarCellClick");
+}
+
+function clearClickedClass() {
+    for (var tr of document.getElementById("calendar-body").children){ // każdy wiersz
+        for (var td of tr.children){                                   // każdy element
+            td.classList.remove("calendarCellClick");
+        }
     }
 }

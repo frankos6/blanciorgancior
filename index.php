@@ -71,7 +71,7 @@
                 </form>
                 <button class="btn btn-outline-primary col-sm-6" id="next" type="button" onclick="next()">Next</button>
             </div>
-            <table class="table table-bordered table-responsive-sm" id="calendar">
+            <table class="table" id="calendar">
                 <thead id="table-head">
                     <tr>
                         <th>Poniedziałek</th>
