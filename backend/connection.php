@@ -18,7 +18,7 @@ else {
 $q = "SELECT id from users WHERE username = '".$user_name."'";
 $result = $conn->query($q);
 $obj = $result->fetch_row();
-$_SESSION['user_id'] = $obj[0];
+@$_SESSION['user_id'] = $obj[0];
 ?>
 <script>
     class Zadanie
@@ -48,35 +48,49 @@ $_SESSION['user_id'] = $obj[0];
             this.user_id = user_id;
         }
     }
-    zadania = [];
-    kalendarze = [];
-    wydarzenia = [];
+    let zadania = [];
+    let kalendarze = [];
+    let wydarzenia = [];
 </script>
 <?php
     // zadania baza -> js
     $q = 'SELECT * FROM zadania';
     $result = $conn->query($q);
-    echo '<script>';
-    $i = 0;
+    echo "<script>\n";
     while($obj = $result->fetch_object())
     {
-        echo "zadania.push(new Zadanie('$obj->nazwa','$obj->data','$obj->waga',$obj->kalendarz_id));";
+        echo "zadania.push(new Zadanie('$obj->nazwa','$obj->data','$obj->waga',$obj->kalendarz_id));\n";
     }
     // kalendarze baza -> js
-    $q = 'SELECT * FROM kalendarze WHERE user_id = "'.$_SESSION['user_id'].'"';
+    $q = 'SELECT * FROM kalendarze WHERE user_id = "'.$_SESSION['user_id'].'"'; //tylko kalendarze usera
     $result = $conn->query($q);
-    $i = 0;
     while($obj = $result->fetch_object())
     {
-        echo "kalendarze.push(new Kalendarz($obj->id,'$obj->kolor','$obj->nazwa',$obj->user_id));";
+        echo "kalendarze.push(new Kalendarz($obj->id,'$obj->kolor','$obj->nazwa',$obj->user_id));\n";
     }
     // wydarzenia baza -> js
     $q = 'SELECT * FROM wydarzenia';
     $result = $conn->query($q);
-    $i = 0;
     while($obj = $result->fetch_object())
     {
-        echo "wydarzenia.push(new Wydarzenie('$obj->nazwa','$obj->data','$obj->powtarzanie',$obj->kalendarz_id));";
+        echo "wydarzenia.push(new Wydarzenie('$obj->nazwa','$obj->data','$obj->powtarzanie',$obj->kalendarz_id));\n";
     }
-    echo '</script>';
+    echo "</script>\n";
 ?>
+
+<script>
+    kalendarze1 = [];
+    zadania1 = [];
+    kalendarze.forEach(element => {                                                // filtrowanie eventów obcych
+        wydarzenia.filter(x=>x.kalendarz_id === element.id).forEach(element => {   // daloby sie to zrobic lepiej,
+            wydarzenia1.push(element);                                             // ale concat nie dziala :c
+        });
+        zadania.filter(x=>x.kalendarz_id === element.id).forEach(element => {
+            zadania1.push(element);
+        });
+    });
+    kalendarze = kalendarze1;
+    zadania = zadania1;
+    delete kalendarze1;         //(już) zbędne zmienne
+    delete zadania1;   
+</script>

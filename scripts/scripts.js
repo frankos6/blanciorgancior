@@ -1,16 +1,15 @@
-today = new Date();
-currentMonth = today.getMonth();
-currentYear = today.getFullYear();
-selectYear = document.getElementById("year");
-selectMonth = document.getElementById("month");
+const today = new Date();
+let currentMonth = today.getMonth();
+let currentYear = today.getFullYear();
+const selectYear = document.getElementById("year");
+const selectMonth = document.getElementById("month");
 
-months = [];
+let months = [];
 for (let i = 0; i < 12; i++) {
-    date = new Date(2022,i,10);
+    let date = new Date(2022,i,10);
     months[i] = capitalize(date.toLocaleString('default', { month: 'long' }));
 }
 
-monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
 updateButtons();
 
@@ -90,13 +89,11 @@ function showCalendar(month, year) {
 
     let firstDay = (new Date(year, month)).getDay()!=0 ? (new Date(year, month)).getDay() : 7;
 
-    tbl = document.getElementById("calendar-body"); // body of the calendar
+    const tbl = document.getElementById("calendar-body"); // body of the calendar
 
     // clearing all previous cells
     tbl.innerHTML = "";
 
-    // filing data about month and in the page via DOM.
-    monthAndYear.innerHTML = months[month] + " " + year;
     selectYear.value = year;
     selectMonth.value = month;
 
@@ -110,8 +107,8 @@ function showCalendar(month, year) {
         //creating individual cells, filing them up with data.
         for (let j = 1; j < 8; j++) {
             if (i === 0 && j < firstDay) {
-                cell = document.createElement("td");
-                cellText = document.createTextNode(daysInMonth(month-1,year)-firstDay+j+1);
+                const cell = document.createElement("td");
+                const cellText = document.createTextNode(daysInMonth(month-1,year)-firstDay+j+1);
                 cell.style.color = "lightgray";
                 cell.id = `${cellText.textContent}-${month==0 ? 12 : month}-${month==0 ? year-1 : year}`
                 cell.attributes.day = j;
@@ -122,8 +119,8 @@ function showCalendar(month, year) {
                 row.appendChild(cell);
             }
             else if (date > daysInMonth(month, year)) {
-                cell = document.createElement("td");
-                cellText = document.createTextNode(xd);
+                const cell = document.createElement("td");
+                const cellText = document.createTextNode(xd);
                 cell.id = `${xd++}-${month+2}-${year}`;
                 cell.style.color = "lightgray";
                 cell.attributes.day = j;
@@ -134,8 +131,8 @@ function showCalendar(month, year) {
                 row.appendChild(cell);
             }
             else {
-                cell = document.createElement("td");
-                cellText = document.createTextNode(date);
+                const cell = document.createElement("td");
+                const cellText = document.createTextNode(date);
                 cell.attributes.day = j;
                 cell.id = `${date}-${month+1}-${year}`;
                 cell.zadania = [];
@@ -157,10 +154,10 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
     }
 
-    color = "yellow"; //default
+    let color = "yellow"; //default
 
     wydarzenia.forEach(element => {
-        temp = kalendarze.find(x => x.id === element.kalendarz_id); // color = kolor kalendarza
+        let temp = kalendarze.find(x => x.id === element.kalendarz_id); // color = kolor kalendarza
         if (temp === undefined){
             color = "yellow"; //default
         }
@@ -194,7 +191,7 @@ function showCalendar(month, year) {
         }
     });
     zadania.forEach(element => {
-        temp = kalendarze.find(x => x.id === element.kalendarz_id);
+        let temp = kalendarze.find(x => x.id === element.kalendarz_id);
         if (temp === undefined){
             color = "yellow"; //default
         }
@@ -221,35 +218,35 @@ function daysInMonth(iMonth, iYear) {
 
 function displayDayInfo(event) {
     document.getElementById("date-display").innerHTML = parseDate(event.currentTarget.id).toLocaleDateString();
-    var targetDiv = document.getElementById('assignments');
+    const targetDiv = document.getElementById('assignments');
     targetDiv.innerHTML = "";
     if (event.currentTarget.zadania.length > 0){                                                                // lista zadań
-        var ul = document.createElement('ul');
+        const ul = document.createElement('ul');
         event.currentTarget.zadania.forEach(element => {
-            var li = document.createElement('li');
+            const li = document.createElement('li');
             li.innerHTML = element.nazwa;
             ul.appendChild(li);
         });
         targetDiv.appendChild(ul);
     }
     else {
-        var div1 = document.createElement("div");
+        const div1 = document.createElement("div");
         div1.innerHTML = "Brak zadań tego dnia.";
         targetDiv.appendChild(div1);
     }
-    var hr = document.createElement("hr");
+    const hr = document.createElement("hr");
     targetDiv.appendChild(hr);
     if (event.currentTarget.wydarzenia.length > 0){                                                             // lista wydarzeń
-        var ul = document.createElement('ul');
+        const ul = document.createElement('ul');
         event.currentTarget.wydarzenia.forEach(element => {
-            var li = document.createElement('li');
+            const li = document.createElement('li');
             li.innerHTML = element.nazwa + " | " + element.data.toLocaleTimeString("pl",{hour: '2-digit', minute:'2-digit'});
             ul.appendChild(li);
         });
         targetDiv.appendChild(ul);
     }
     else {
-        var div2 = document.createElement("div");
+        const div2 = document.createElement("div");
         div2.innerHTML = "Brak wydarzeń tego dnia.";
         targetDiv.appendChild(div2);
     }
@@ -258,8 +255,8 @@ function displayDayInfo(event) {
 }
 
 function clearClickedClass() {
-    for (var tr of document.getElementById("calendar-body").children){ // każdy wiersz
-        for (var td of tr.children){                                   // każdy element
+    for (var tr of document.getElementById("calendar-body").children){ // każdy wiersz (tydzień)
+        for (var td of tr.children){                                   // każdy dzień
             td.classList.remove("calendarCellClick");
         }
     }
