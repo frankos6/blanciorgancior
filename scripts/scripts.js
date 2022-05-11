@@ -157,11 +157,13 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
     }
 
+    color = "yellow";
+
     wydarzenia.forEach(element => {
         if (element.data.getMonth() === currentMonth && (element.data.getFullYear() === currentYear||element.powtarzanie === "year")){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
-                x.style.color = "red";
+                x.style.color = color;
                 x.wydarzenia.push(element);
             }
             
@@ -169,7 +171,7 @@ function showCalendar(month, year) {
         if (element.powtarzanie === "month" && element.data.valueOf()<=(new Date(currentYear,currentMonth,1)).valueOf()){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
-                x.style.color = "red";
+                x.style.color = color;
                 x.wydarzenia.push(element);
             }
         }
@@ -177,7 +179,7 @@ function showCalendar(month, year) {
             for (var tr of document.getElementById("calendar-body").children){
                 for (var td of tr.children){
                     if (parseDate(td.id).getDay()==element.data.getDay()&&parseDate(td.id).valueOf()>=element.data.valueOf()){
-                        td.style.color = "red";
+                        td.style.color = color;
                         td.wydarzenia.push(element);
                     }
                 }
@@ -188,12 +190,7 @@ function showCalendar(month, year) {
         if (element.data.getMonth() === currentMonth){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
-                if (x.style.color === ""){
-                    x.style.color = "blue"
-                }
-                else {
-                    x.style.backgroundColor = "blue";
-                }
+                x.style.border = "1px solid " + color;
                 x.zadania.push(element)
             }
             
