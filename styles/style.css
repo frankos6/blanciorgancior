@@ -46,14 +46,13 @@ body{
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    transition: 0.5s;
 }
 
 #date-display{
     text-align: center;
     font-size: 1.5rem;
     animation: appearText 1s ease-in;
-    margin-top: 0;
+    margin-top: 10px;
 }
 
 #welcome-msg{
@@ -418,6 +417,8 @@ th{
     color: white;
     opacity: 100%;
     transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    border-radius: 20px;
 }
 
 .calendarCell:hover{
@@ -426,6 +427,15 @@ th{
     transition: 0.3s ease-in-out;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.calendarCellClick{
+    background-color: #1f1f1f;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 td{
@@ -461,6 +471,7 @@ option{
     justify-content: center;
     color: white;
     background-color: #141414;
+    height: 100%;
 }
 
 .form-select{
@@ -505,6 +516,19 @@ label{
 /* ========================================================================================================================================================================*/
 /* Assignments display ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* ========================================================================================================================================================================*/
+
+.assignment-display{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: appearText 1s ease-in;
+}
+
+hr{
+    width: 12rem;
+}
 
 /* ========================================================================================================================================================================*/
 /* Dark mode switch -------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -594,6 +618,6 @@ input:checked + .slider:before {
 }
 
 .bg-info{
-    border: 1px solid yellow;
+    border: 1px solid lightgray;
     border-radius: 20px;
 }
