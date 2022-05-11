@@ -24,4 +24,4 @@
     }else{                                                                                                                  //
         echo "<script> document.getElementById('error-msg').innerHTML = 'Błąd - nieprawidłowe hasło lub login!'</script>";  // Błąd logowania
     }                                                                                                                       //
-?>  
+?>
