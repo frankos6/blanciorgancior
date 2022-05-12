@@ -8,12 +8,9 @@ Funkcjonalność podstawowa <br>
 •Widok pokazujący cały miesiąc, lub tydzień, lub dzień. + <br>
 •Możliwość wyświetlenia wszystkich wydarzeń lub zadań. -<br>
 
-Funkcjonalność zaawansowana •Tworzenie użytkowników.<br>
-•Możliwość udostępniania zdarzenia innemu użytkownikowi. --- <br>
-•Export kalendarza (dnia, miesiąca lub całego) do pliku (pdf, csv). ---<br>
-•Opcja drukowania kalendarza. CTRL + P <br>
+Funkcjonalność zaawansowana <br>
+•Tworzenie użytkowników. +<br>
 •Zmiana wyglądu kalendarza poprzez panel użytkownika. -<br>
-•Przypomnienie o wydarzeniu wysyłane na e-maila. ---<br>
 
 Sprawozdanie Sprawozdanie (w pdf) powinno zawierać:<br> 
 •Projekt bazy danych w diagramie ERD (klucze główne, klucze obce, typy danych, związki między encjami).<br>
