@@ -1,3 +1,4 @@
+
 # Kalendarz BGT <br>
 Funkcjonalność podstawowa <br>
 •Wyświetlenie kalendarza z podziałem na miesiące i lata. + <br>
@@ -18,3 +19,4 @@ Sprawozdanie Sprawozdanie (w pdf) powinno zawierać:<br>
 •Projekt funkcjonalny (opis funkcji systemu, interakcje miedzy systemem a użytkownikiem).<br>
 •Opis sposobu pracy (podział pracy na etapy, określenie czasowe pracy, wykres Gantta, propozycja wyceny po zsumowaniu roboczogodzin).<br>
 •Projekt graficzny, pozycjonowanie elementów na stronie.<br>
+
