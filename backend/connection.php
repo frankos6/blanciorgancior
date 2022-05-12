@@ -79,7 +79,7 @@ $obj = $result->fetch_row();
 ?>
 
 <script>
-    kalendarze1 = [];
+    wydarzenia1 = [];
     zadania1 = [];
     kalendarze.forEach(element => {                                                // filtrowanie eventów obcych
         wydarzenia.filter(x=>x.kalendarz_id === element.id).forEach(element => {   // daloby sie to zrobic lepiej,
