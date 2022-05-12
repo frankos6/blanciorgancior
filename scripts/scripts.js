@@ -233,7 +233,11 @@ function displayDayInfo(event) {
         event.currentTarget.zadania.forEach(element => {
             const li = document.createElement('li');
             li.innerHTML = element.nazwa;
-            li.onclick = () => {}
+            li.onclick = () =>{                                                              // Otworzenie się formularza do edycji zadań
+                    console.log('jge');
+                    document.getElementById("options-menu").style.display = "flex";          // Pokazanie się okna
+                    document.getElementById('iframe').src = "backend/edytujZadanie.php";     // Zmienienie iframe'a w zależności od przycisku
+            }
             ul.appendChild(li);
         });
         targetDiv.appendChild(ul);
@@ -250,6 +254,11 @@ function displayDayInfo(event) {
         event.currentTarget.wydarzenia.forEach(element => {
             const li = document.createElement('li');
             li.innerHTML = element.nazwa + " | " + element.data.toLocaleTimeString("pl",{hour: '2-digit', minute:'2-digit'});
+            li.onclick = () =>{                                                              // Otworzenie się formularza do edycji zadań
+                    console.log('jge');
+                    document.getElementById("options-menu").style.display = "flex";          // Pokazanie się okna
+                    document.getElementById('iframe').src = "backend/edytujWydarzenie.php";     // Zmienienie iframe'a w zależności od przycisku
+            }
             ul.appendChild(li);
         });
         targetDiv.appendChild(ul);
