@@ -12,8 +12,8 @@
     ?>
     <script>
         function generate_table() {
-            var headers = ['Nazwa','Data','Opis','Powtarzaj co','Kalendarz']
-            var zadanieIndex = ['nazwa','data','opis','powtarzanie','kalendarz_id']
+            var headers = ['Nazwa','Data','Powtarzaj co','Kalendarz']
+            var zadanieIndex = ['nazwa','data','powtarzanie','kalendarz_id']
             var body = document.getElementsByTagName("body")[0];
 
             var tbl = document.createElement("table");
@@ -21,7 +21,7 @@
             
             //header
             var row1 = document.createElement("tr");
-            for (var j = 0; j < 5; j++) {
+            for (var j = 0; j < 4; j++) {
                 var cell = document.createElement("th");
                 var cellText = document.createTextNode(headers[j]);
                 cell.appendChild(cellText);

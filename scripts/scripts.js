@@ -115,7 +115,11 @@ function showCalendar(month, year) {
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
-                cell.addEventListener('click',displayDayInfo);
+                cell.addEventListener('click',event=>{
+                    const id = event.currentTarget.id;
+                    previous();
+                    document.getElementById(id).click();
+                });
                 row.appendChild(cell);
             }
             else if (date > daysInMonth(month, year)) {
@@ -127,7 +131,11 @@ function showCalendar(month, year) {
                 cell.zadania = [];
                 cell.wydarzenia = [];
                 cell.appendChild(cellText);
-                cell.addEventListener('click',displayDayInfo)
+                cell.addEventListener('click',event=>{
+                    const id = event.currentTarget.id;
+                    next();
+                    document.getElementById(id).click();
+                });
                 row.appendChild(cell);
             }
             else {
@@ -141,7 +149,7 @@ function showCalendar(month, year) {
                 cell.addEventListener('click',displayDayInfo)
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
-                    cell.click();
+                    window.onload = () => {cell.click();}
                 } // color today's date
                 cell.classList.add("calendarCell");
                 row.appendChild(cell);
@@ -224,12 +232,8 @@ function displayDayInfo(event) {
         const ul = document.createElement('ul');
         event.currentTarget.zadania.forEach(element => {
             const li = document.createElement('li');
-            li.onclick = () =>{                                                              // Otworzenie się formularza do edycji zadań
-                    console.log('jge');
-                    document.getElementById("options-menu").style.display = "flex";          // Pokazanie się okna
-                    document.getElementById('iframe').src = "backend/edytujZadanie.php";     // Zmienienie iframe'a w zależności od przycisku
-            }
             li.innerHTML = element.nazwa;
+            li.onclick = () => {}
             ul.appendChild(li);
         });
         targetDiv.appendChild(ul);
@@ -245,11 +249,6 @@ function displayDayInfo(event) {
         const ul = document.createElement('ul');
         event.currentTarget.wydarzenia.forEach(element => {
             const li = document.createElement('li');
-            li.onclick = () =>{                                                              // Otworzenie się formularza do edycji zadań
-                console.log('jge');
-                document.getElementById("options-menu").style.display = "flex";          // Pokazanie się okna
-                document.getElementById('iframe').src = "backend/edytujWydarzenie.php";  // Zmienienie iframe'a w zależności od przycisku
-            }
             li.innerHTML = element.nazwa + " | " + element.data.toLocaleTimeString("pl",{hour: '2-digit', minute:'2-digit'});
             ul.appendChild(li);
         });
