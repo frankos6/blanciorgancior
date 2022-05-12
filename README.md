@@ -4,13 +4,13 @@ Funkcjonalność podstawowa <br>
 •Wyświetlenie kalendarza z podziałem na miesiące i lata. + <br>
 •Dodanie wydarzeń do każdego dnia o określonej godzinie, powtarzanych co tydzień, co miesiąc lub co roku. + <br>
 •Dodanie zadań do każdego dnia (czyli podział danych na wydarzenia i zadania). + <br>
-•Możliwość edycji lub usunięcia zdarzenia. - <br>
+•Możliwość edycji lub usunięcia zdarzenia. +- <br>
 •Dodanie wielu kalendarzy dla jednego użytkownika (oznaczenie kolorem na kalendarzu). +-<br>
 •Widok pokazujący cały miesiąc, lub tydzień, lub dzień. + <br>
-•Możliwość wyświetlenia wszystkich wydarzeń lub zadań. -<br>
+•Możliwość wyświetlenia wszystkich wydarzeń lub zadań. +-<br>
 
 Funkcjonalność zaawansowana <br>
-•Tworzenie użytkowników.<br>
+•Tworzenie użytkowników. +<br>
 •Opcja drukowania kalendarza. CTRL + P <br>
 •Zmiana wyglądu kalendarza poprzez panel użytkownika. -<br>
 
