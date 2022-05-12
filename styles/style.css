@@ -195,6 +195,9 @@ body{
     padding: 10px;
 }
 
+.hr{
+    width: 100%;
+}
 .center-box{
     width: 37%;
     height: 100%;
@@ -356,9 +359,10 @@ iframe{
     border: 1px solid white;
     background-color: #141414;
     color: white;
-    height: 3rem;
-    width: 17rem;
-    font-size: 24px;
+    height: 2.5rem;
+    width: 16.5rem;
+    border-radius: 100px;
+    font-size: 22px;
     margin: 0.3rem;
     transition: 0.2s ease-in-out;
     cursor: pointer;
