@@ -89,3 +89,7 @@ a:hover{
   font-size: 22px;
   border-top: 2px solid #FFF01F;
 }
+#clock {
+    text-transform: uppercase;
+}
+
