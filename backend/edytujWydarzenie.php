@@ -1,6 +1,3 @@
-<?php 
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +11,14 @@ session_start();
     <?php
         require('connection.php');                                              // Połączenie z bazą danych
         if (isset($_POST['nazwa'])) {
-            $q = "INSERT INTO wydarzenia(`nazwa`,`data`,`powtarzanie`,`kalendarz_id`) VALUES ('".$_POST['nazwa']."','".$_POST['data']."','".$_POST['powtarzanie']."','".$_POST['kalendarz']."')";
-            $result = $conn->query($q);                                         //Query dodawania zadania
+            $q = "UPDATE wydarzenia(`nazwa`,`data`,`powtarzanie`,`kalendarz_id`) VALUES ('".$_POST['nazwa']."','".$_POST['data']."','".$_POST['powtarzanie']."','".$_POST['kalendarz']."')";
+            $result = $conn->query($q);                                         //Query edycji zadania
             if ($result){
-                echo "Pomyślnie dodano wydarzenie.";                            // Sprawdzanie czy query się poprawnie wykonało
+                echo "Pomyślnie edytowano wydarzenie.";                          // Sprawdzanie czy query się poprawnie wykonało
                 echo "<script>window.parent.location.reload();</script>";       //Powrót na stronę główną w przypadku pomyślnego dodania
             }
             else {
-                echo "Błąd przy dodawaniu wydarzenia.";                         // I wyświetlanie stosownej wiadomości
+                echo "Błąd przy edycji wydarzenia.";                         // I wyświetlanie stosownej wiadomości
             }
             die();
         }
@@ -44,6 +41,7 @@ session_start();
         </select>
         <button type="submit" class="login-form-button" id="important"> <span>Dodaj</span> </button>
     </form>
+        <button onclick="" class="login-form-button" id="important"> <span> Usuń</span> </button>
     <script>
         const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
         kalendarze.forEach(element => {
