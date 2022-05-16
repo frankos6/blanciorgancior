@@ -2,9 +2,11 @@
     if(!isset($_SESSION['Imie'])){
         header("Location: login.php");
     }
-    require("backend\connection.php")
 ?>
 <!DOCTYPE html>
+<?php                                       // szymon-type syntax
+    require("backend\connection.php")
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -23,7 +23,8 @@ $obj = $result->fetch_row();
 <script>
     class Zadanie
     {
-        constructor(nazwa,data,waga,kalendarz_id){
+        constructor(id,nazwa,data,waga,kalendarz_id){
+            this.id = id;
             this.nazwa = nazwa;
             this.data = new Date(data);
             this.waga = waga;
@@ -32,7 +33,8 @@ $obj = $result->fetch_row();
     }
     class Wydarzenie
     {
-        constructor(nazwa,data,powtarzanie,kalendarz_id){
+        constructor(id,nazwa,data,powtarzanie,kalendarz_id){
+            this.id = id;
             this.nazwa = nazwa;
             this.data = new Date(data);
             this.powtarzanie = powtarzanie;
@@ -59,7 +61,7 @@ $obj = $result->fetch_row();
     echo "<script>\n";
     while($obj = $result->fetch_object())
     {
-        echo "zadania.push(new Zadanie('$obj->nazwa','$obj->data','$obj->waga',$obj->kalendarz_id));\n";
+        echo "zadania.push(new Zadanie($obj->id,'$obj->nazwa','$obj->data','$obj->waga',$obj->kalendarz_id));\n";
     }
     // kalendarze baza -> js
     $q = 'SELECT * FROM kalendarze WHERE user_id = "'.$_SESSION['user_id'].'"'; //tylko kalendarze usera
@@ -73,7 +75,7 @@ $obj = $result->fetch_row();
     $result = $conn->query($q);
     while($obj = $result->fetch_object())
     {
-        echo "wydarzenia.push(new Wydarzenie('$obj->nazwa','$obj->data','$obj->powtarzanie',$obj->kalendarz_id));\n";
+        echo "wydarzenia.push(new Wydarzenie($obj->id,'$obj->nazwa','$obj->data','$obj->powtarzanie',$obj->kalendarz_id));\n";
     }
     echo "</script>\n";
 ?>
@@ -89,7 +91,7 @@ $obj = $result->fetch_row();
             zadania1.push(element);
         });
     });
-    kalendarze = kalendarze1;
+    wydarzenia = wydarzenia1;
     zadania = zadania1;
     delete kalendarze1;         //(już) zbędne zmienne
     delete zadania1;   
