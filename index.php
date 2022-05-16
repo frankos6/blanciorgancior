@@ -4,7 +4,7 @@
     }
 ?>
 <!DOCTYPE html>
-<?php                                       // szymon-type syntax
+<?php                                       // szymon-type syntax :DDD
     require("backend\connection.php")
 ?>
 <html lang="en">
@@ -30,10 +30,6 @@
             <div id="assignments" class="assignment-display">
             </div>
             <img src="Images/logout-icon.png" class="logout-icon" onclick="logout()" title="Wyloguj się">
-            <!-- <label class="switch">
-                <input type="checkbox" id="checkbox"  onclick="darkMode()">
-                <span class="slider round"></span>
-            </label> -->
             <div class="add-buttons">
                 <button class="add-button" title="Dodaj zadanie" onclick="addTaskForm()"> Dodaj Zadanie  + </button>
                 <button class="add-button" title="Dodaj wydarzenie" onclick="addEventForm()">Dodaj Wydarzenie + </button>
@@ -42,6 +38,20 @@
         <div class="rightside">
             <h3 class="card-header" id="monthAndYear"></h3>
             <div class="cal-top">
+            <select name="kalendarz" id="kalendarz" class="index-select" class="form-select" >
+
+            </select>
+            <script>
+                const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
+                kalendarze.forEach(element => {
+                    var option = document.createElement("option");
+                        option.value = element.id;
+                    var text = document.createTextNode(element.nazwa);
+                        option.style.color = element.kolor;
+                    option.appendChild(text)
+                    kalendarzSelect.appendChild(option);
+                });
+            </script>
                 <button class="btn btn-outline-primary col-sm-6" id="previous" type="button" onclick="previous()">Previous</button>
                 <form class="form-inline">
                     <label class="lead mr-2 ml-2" for="month"></label>

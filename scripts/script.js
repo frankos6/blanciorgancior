@@ -16,7 +16,6 @@ function logout(){                                                          //Fu
     location.href = "login.php"                                             
 }
 
-
 let Data = (new Date()).toLocaleString();                                   // Pobranie dzisiejszej daty
 Data = Data.split(",")[0];                                                  // Zamienienie formatowania daty     
 console.log(Data);                                                          // Sprawdzanko czy działa

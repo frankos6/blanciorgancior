@@ -9,6 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
+    <style> body{ background-color: #141414;
+                  background-image: none;
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: column;
+                  }</style>
 </head>
 <body>
     <?php
