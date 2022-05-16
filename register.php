@@ -19,7 +19,7 @@
     <div class="logo-box"> 
          <div class="inline-block"> BGT <img src="Images/calendar-icon.png" class="calendar-icon"> </div>
         CALENDAR
-        <hr> 
+        <hr class="cat"> 
     </div>
         <div class="login-box">
             <form action="rejestracja.php" class="login-form" method="POST">

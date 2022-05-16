@@ -19,8 +19,8 @@ body{
     width: 2.5rem;
     cursor: pointer;
     position: absolute;
-    top: 20;
-    right: 20;
+    top: 20px;
+    right: 20px;
     transition: 0.3s ease-in-out;
 }
 
@@ -52,13 +52,14 @@ body{
     text-align: center;
     font-size: 1.5rem;
     animation: appearText 1s ease-in;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #welcome-msg{
     border-bottom: 1px solid #040406;
     animation: appearText 1s ease-in;
-    margin-bottom: -10;
+    margin-bottom: 0px;
     border-bottom: 1px solid white;
 }
 
@@ -147,12 +148,13 @@ body{
 
 .overlay{
     box-shadow: 2px 2px 5px black;
-    width: 20%;
-    height: 70%;
+    width: 27%;
+    height: 80%;
     margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     background-color: #141414;
     box-sizing: border-box;
     padding: 2rem;
@@ -176,6 +178,10 @@ body{
     color: white;
     border-right: 1px solid white;
     align-items: center;
+}
+
+.cat{
+    width: 100% !important;
 }
 
 .logo-box{
@@ -324,12 +330,7 @@ a:active{
   
 .login-form-button:hover span:after {
     right: 0;
-}
-
-.login-form-button:active{
-    background-color: white;
-    color: #040406;
-    transition: 0.3s;
+    opacity: 1;
 }
 
 .register-text{
@@ -390,6 +391,14 @@ iframe{
     font-size: 32px;
     height: 85%;
     width: 100%;
+}
+
+.index-select{
+    width: 12rem;
+    font-size: 24px;
+    position: absolute;
+    left: 270px;
+    border-bottom: 1px solid white;
 }
 
 .btn{
@@ -535,10 +544,24 @@ hr{
 }
 
 li:hover{
-    color: darkgray;
-    border-bottom: 1px solid darkgray;
+    transition: 0.5s;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    border-radius: 2px;
+    border-bottom: 1px solid white;
+
+}
+
+li{
+    border-bottom: 1px solid #141414;
+    transition: 0.5s;
+    position: relative;
+    left: -20px;
+    list-style: none;
+    margin: 10px;
+}
+
+ul{
+    margin: 5px;
 }
 
 /* ========================================================================================================================================================================*/
@@ -611,9 +634,9 @@ input:checked + .slider:before {
 /* Animacje */
 
 @keyframes appear{
-    0%{width: 12%;}
-    50%{width: 25%;}
-    100%{width: 20%;}
+    0%{width: 20%;}
+    50%{width: 30%;}
+    100%{width: 27%;}
 }
 
 @keyframes appearText{
