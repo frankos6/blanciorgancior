@@ -53,7 +53,7 @@ body{
     font-size: 1.5rem;
     animation: appearText 1s ease-in;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 #welcome-msg{
@@ -560,6 +560,9 @@ li{
     margin: 10px;
 }
 
+hr{
+    margin: 0px;
+}
 ul{
     margin: 5px;
 }
