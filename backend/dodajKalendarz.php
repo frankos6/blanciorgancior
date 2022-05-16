@@ -21,7 +21,7 @@
                 echo "<script>window.parent.location.reload();</script>";       //Powrót na stronę główną w przypadku pomyślnego dodania
             }
             else {
-                echo "Błąd przy dodawaniu klaendarza.";                         // I wyświetlanie stosownej wiadomości
+                echo "Błąd przy dodawaniu kalendarza.";                         // I wyświetlanie stosownej wiadomości
             }
             die();
         }

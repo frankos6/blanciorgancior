@@ -85,6 +85,7 @@ $obj = $result->fetch_row();
     zadania1 = [];
     kalendarze.forEach(element => {                                                // filtrowanie eventów obcych
         wydarzenia.filter(x=>x.kalendarz_id === element.id).forEach(element => {   // daloby sie to zrobic lepiej,
+            element.powtarzanie = element.powtarzanie === "" ? "NULL" : element.powtarzanie; // panel edycji jest pusty przy ""
             wydarzenia1.push(element);                                             // ale concat nie dziala :c
         });
         zadania.filter(x=>x.kalendarz_id === element.id).forEach(element => {
