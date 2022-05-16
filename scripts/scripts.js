@@ -172,6 +172,7 @@ function showCalendar(month, year) {
         else {
             color = temp.kolor;
         }
+        if (element.kalendarz_id != selectedCalendar) return;
         if (element.data.getMonth() === currentMonth && (element.data.getFullYear() === currentYear||element.powtarzanie === "year")){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){
@@ -206,6 +207,7 @@ function showCalendar(month, year) {
         else {
             color = temp.kolor;
         }
+        if (element.kalendarz_id != selectedCalendar) return;
         if (element.data.getMonth() === currentMonth){
             var x = document.getElementById(`${element.data.getDate()}-${currentMonth+1}-${currentYear}`);
             if (x!=null){

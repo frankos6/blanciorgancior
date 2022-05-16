@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,25 +33,25 @@
             tblBody.appendChild(row1);
             
 
-            for (var i = 0; i < wydarzenia.length; i++) {
-              var row = document.createElement("tr");
+            wydarzenia.forEach(element => {
+                var row = document.createElement("tr");
             
-              for (var j = 0; j < 5; j++) {
+              for (var j = 0; j < 4; j++) {
                 var cell = document.createElement("td");
-                if (j==4){
-                    var cellText = document.createTextNode(kalendarze[wydarzenia[i].kalendarz_id-1].nazwa);
-                    cell.style.color = kalendarze[wydarzenia[i].kalendarz_id-1].kolor
+                if (j==3){
+                    var cellText = document.createTextNode(kalendarze.filter(x => x.id === element.kalendarz_id)[0].nazwa);
+                    cell.style.color = kalendarze.filter(x => x.id === element.kalendarz_id)[0].kolor
                 }
                 else if (j==1){
-                    var cellText = document.createTextNode(wydarzenia[i][zadanieIndex[j]].toLocaleDateString())
+                    var cellText = document.createTextNode(element[zadanieIndex[j]].toLocaleDateString())
                 }
-                else {var cellText = document.createTextNode(wydarzenia[i][zadanieIndex[j]]);}
+                else {var cellText = document.createTextNode(element[zadanieIndex[j]]);}
                 
                 cell.appendChild(cellText);
                 row.appendChild(cell);
               }
               tblBody.appendChild(row);
-            }
+            });
             tbl.appendChild(tblBody);
             body.appendChild(tbl);
             tbl.setAttribute("border", "2");

@@ -28,7 +28,7 @@
     ?>
     <form method="post" class="form">
         <label for="nazwa">Nazwa</label>
-            <input type="text" name="nazwa" required class="form-input" placeholder="Nazwa Wydarzenia"><br>
+            <input type="text" name="nazwa" required class="form-input" placeholder="Nazwa Kalendarza"><br>
         <label for="kolor">Kolor kalendarza</label>
         <input type="color" name="kolor" value="#ffffff">
         <button type="submit" class="login-form-button" id="important"> <span>Dodaj</span> </button>

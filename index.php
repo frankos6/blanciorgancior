@@ -42,7 +42,11 @@
 
             </select>
             <script>
+                let selectedCalendar;
                 const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
+                kalendarzSelect.addEventListener("change",event => {
+                    selectedCalendar = event.target.value;
+                });
                 kalendarze.forEach(element => {
                     var option = document.createElement("option");
                         option.value = element.id;
@@ -50,6 +54,7 @@
                         option.style.color = element.kolor;
                     option.appendChild(text)
                     kalendarzSelect.appendChild(option);
+                    selectedCalendar = parseInt(option.value);
                 });
             </script>
                 <button class="btn btn-outline-primary col-sm-6" id="previous" type="button" onclick="previous()">Previous</button>
