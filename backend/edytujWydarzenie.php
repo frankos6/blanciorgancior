@@ -45,7 +45,7 @@
         </select>
         <button type="submit" class="login-form-button" id="important"> <span>Aktualizuj</span> </button>
     </form>
-        <button onclick="() => {  }" class="login-form-button" id="important"> <span> Usuń</span> </button>
+        <button onclick="deleteRedirect()" class="login-form-button" id="important"> <span> Usuń</span> </button>
     <script>
         const wydarzonko = wydarzenia.filter(x => x.id === <?php echo $_GET['id']; ?>)[0];
         const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
@@ -60,6 +60,7 @@
         document.getElementById("nazwa").value = wydarzonko.nazwa;
         document.getElementById("data").value = wydarzonko.data.toISOString().replace(":00.000Z","") // :D
         document.getElementById("powtarzanie").value = wydarzonko.powtarzanie;
+        const deleteRedirect = () => { this.parent.document.getElementById('iframe').src = '/backend/usunWydarzenie.php?id='+<?php echo $_GET['id']; ?> } // :D
     </script>
 </body>
 </html>
