@@ -41,6 +41,7 @@
                     <select name="kalendarz" id="kalendarz" class="index-select" class="form-select" >
 
             </select>
+            <img class="add-calendar-img" src="Images/plus-icon.png" onclick="addCalendarForm()">
             <script>
                 let selectedCalendar;
                 const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
