@@ -1,6 +1,6 @@
 
 # Kalendarz BGT <br>
-------------------------------------------------------------------------------<br> 
+<hr>
 Funkcjonalność podstawowa:<br>
 
 • Wyświetlenie kalendarza z podziałem na miesiące i lata ✔<br>
@@ -11,18 +11,18 @@ Funkcjonalność podstawowa:<br>
 • Widok pokazujący cały miesiąc, lub tydzień, lub dzień ✔ <br>
 • Możliwość wyświetlenia wszystkich wydarzeń lub zadań 🔅<br>
 
-------------------------------------------------------------------------------<br> 
+<hr>
 Funkcjonalność zaawansowana:<br>
 
 • Tworzenie użytkowników ✔ <br>
 • Wysyłanie przypomnień na e-mail ❌<br>
 • Zmiana wyglądu kalendarza poprzez panel użytkownika ✔<br>
 
-------------------------------------------------------------------------------<br> 
+<hr>
 Sprawozdanie:<br> 
 
 • Projekt bazy danych w diagramie ERD ✔ <br>
 • Projekt funkcjonalny ❌<br>
 • Opis sposobu pracy  ✔<br>
 • Projekt graficzny ✔<br>
-------------------------------------------------------------------------------
+<hr>
