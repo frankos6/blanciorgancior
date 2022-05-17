@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Kwi 2022, 12:49
+-- Czas generowania: 17 Maj 2022, 11:44
 -- Wersja serwera: 10.4.19-MariaDB
 -- Wersja PHP: 8.0.7
 
@@ -34,13 +34,6 @@ CREATE TABLE `kalendarze` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Zrzut danych tabeli `kalendarze`
---
-
-INSERT INTO `kalendarze` (`id`, `kolor`, `nazwa`, `user_id`) VALUES
-(1, '#ffffff', 'cal1', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -54,13 +47,6 @@ CREATE TABLE `users` (
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Zrzut danych tabeli `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'frankos6', 'frankos6@wp.pl', 'siema');
-
 -- --------------------------------------------------------
 
 --
@@ -71,7 +57,6 @@ CREATE TABLE `wydarzenia` (
   `id` int(11) NOT NULL,
   `nazwa` varchar(255) NOT NULL,
   `data` datetime NOT NULL,
-  `opis` mediumtext NOT NULL,
   `powtarzanie` set('week','month','year') DEFAULT NULL,
   `kalendarz_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -86,17 +71,9 @@ CREATE TABLE `zadania` (
   `id` int(11) NOT NULL,
   `nazwa` varchar(255) NOT NULL,
   `data` date NOT NULL,
-  `opis` mediumtext NOT NULL,
   `waga` set('normal','high','veryhigh') NOT NULL DEFAULT 'normal',
   `kalendarz_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Zrzut danych tabeli `zadania`
---
-
-INSERT INTO `zadania` (`id`, `nazwa`, `data`, `opis`, `waga`, `kalendarz_id`) VALUES
-(1, 'zad1', '2022-07-05', 'xd', 'normal', 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -137,25 +114,25 @@ ALTER TABLE `zadania`
 -- AUTO_INCREMENT dla tabeli `kalendarze`
 --
 ALTER TABLE `kalendarze`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `wydarzenia`
 --
 ALTER TABLE `wydarzenia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `zadania`
 --
 ALTER TABLE `zadania`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ograniczenia dla zrzutów tabel
