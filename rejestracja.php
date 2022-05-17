@@ -20,7 +20,9 @@
         } else{                                                                                                             //
             if ($Pass == $RePass){                                                                                          //  
                 $conn->query("INSERT INTO users VALUES (null, '$name', '$email', '$Pass')");                                //
-                header('Location: login.php');                                                                              // Przejście na login.php w przypadku pomyślnej rejestracji
+                $obj = $conn->query("SELECT id FROM users WHERE email = '$email'")->fetch_object();                         // id dodanego użytkownika
+                $conn->query("INSERT INTO kalendarze VALUES (null, '#ffff00', 'Kalendarz', '$obj->id'");                    // dodanie domyślnego kalendarza
+                echo '<script> window.location.href = "login.php" </script>';                                                                                // Przejście na login.php w przypadku pomyślnej rejestracji
             } else{                                                                                                         // 
                 echo "<script> document.getElementById('error-msg').innerHTML = 'Hasła się nie zgadzają!'</script>";        // Błąd o niepoprawnych hasłach
             }                                                                                                               //

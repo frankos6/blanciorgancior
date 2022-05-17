@@ -46,6 +46,8 @@
                 const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
                 kalendarzSelect.addEventListener("change",event => {
                     selectedCalendar = event.target.value;
+                    next();
+                    previous();
                 });
                 kalendarze.forEach(element => {
                     var option = document.createElement("option");
