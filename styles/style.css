@@ -24,6 +24,12 @@ body{
     transition: 0.3s ease-in-out;
 }
 
+.add-calendar-img{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
 .logout-icon:hover{
     height: 3rem;
     width: 3rem;
@@ -394,11 +400,19 @@ iframe{
 }
 
 .index-select{
-    width: 12rem;
+    width: 16rem;
     font-size: 24px;
-    position: absolute;
-    left: 270px;
     border-bottom: 1px solid white;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.abcd{
+    float:left;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 2.3rem;
 }
 
 .btn{

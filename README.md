@@ -7,9 +7,9 @@ Funkcjonalność podstawowa:<br>
 • Dodanie wydarzeń do każdego dnia o określonej godzinie, powtarzalnych ✔<br>
 • Dodanie zadań do każdego dnia ✔<br>
 • Możliwość edycji lub usunięcia zdarzenia ✔<br>
-• Dodanie wielu kalendarzy dla jednego użytkownika ✔<br>
+• Dodanie wielu kalendarzy dla jednego użytkownika 🔅<br>
 • Widok pokazujący cały miesiąc, lub tydzień, lub dzień ✔ <br>
-• Możliwość wyświetlenia wszystkich wydarzeń lub zadań ✔<br>
+• Możliwość wyświetlenia wszystkich wydarzeń lub zadań 🔅<br>
 
 ------------------------------------------------------------------------------<br> 
 Funkcjonalność zaawansowana:<br>

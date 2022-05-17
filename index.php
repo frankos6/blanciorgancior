@@ -37,74 +37,77 @@
         </div>
         <div class="rightside">
             <h3 class="card-header" id="monthAndYear"></h3>
-            <div class="cal-top">
-            <select name="kalendarz" id="kalendarz" class="index-select" class="form-select" >
+            <div class="abcd">
+                    <select name="kalendarz" id="kalendarz" class="index-select" class="form-select" >
 
-            </select>
-            <script>
-                let selectedCalendar;
-                const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
-                kalendarzSelect.addEventListener("change",event => {
-                    selectedCalendar = event.target.value;
-                });
-                kalendarze.forEach(element => {
-                    var option = document.createElement("option");
-                        option.value = element.id;
-                    var text = document.createTextNode(element.nazwa);
-                        option.style.color = element.kolor;
-                    option.appendChild(text)
-                    kalendarzSelect.appendChild(option);
-                    selectedCalendar = parseInt(option.value);
-                });
-            </script>
-                <button class="btn btn-outline-primary col-sm-6" id="previous" type="button" onclick="previous()">Previous</button>
-                <form class="form-inline">
-                    <label class="lead mr-2 ml-2" for="month"></label>
-                    <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
-                        <option value=0>Styczeń</option>
-                        <option value=1>Luty</option>
-                        <option value=2>Marzec</option>
-                        <option value=3>Kwiecień</option>
-                        <option value=4>Maj</option>
-                        <option value=5>Czerwiec</option>
-                        <option value=6>Lipiec</option>
-                        <option value=7>Sierpień</option>
-                        <option value=8>Wrzesień</option>
-                        <option value=9>Październik</option>
-                        <option value=10>Listopad</option>
-                        <option value=11>Grudzień</option>
                     </select>
-                        <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
-                        <option value=2022>2022</option>
-                        <option value=2023>2023</option>
-                        <option value=2024>2024</option>
-                        <option value=2025>2025</option>
-                        <option value=2026>2026</option>
-                        <option value=2027>2027</option>
-                        <option value=2028>2028</option>
-                        <option value=2029>2029</option>
-                        <option value=2030>2030</option>
-                    </select>
-                </form>
-                <button class="btn btn-outline-primary col-sm-6" id="next" type="button" onclick="next()">Next</button>
+                    <img class="add-calendar-img" src="Images/plus-icon.png" onclick="addCalendarForm()">
             </div>
-            <table class="table" id="calendar">
-                <thead id="table-head">
-                    <tr>
-                        <th>Poniedziałek</th>
-                        <th>Wtorek</th>
-                        <th>Środa</th>
-                        <th>Czwartek</th>
-                        <th>Piątek</th>
-                        <th>Sobota</th>
-                        <th>Niedziela</th>
-                    </tr>
-                </thead>
+            <div class="cal-top">
+                <script>
+                    let selectedCalendar;
+                    const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika
+                    kalendarzSelect.addEventListener("change",event => {
+                        selectedCalendar = event.target.value;
+                    });
+                    kalendarze.forEach(element => {
+                        var option = document.createElement("option");
+                            option.value = element.id;
+                        var text = document.createTextNode(element.nazwa);
+                            option.style.color = element.kolor;
+                        option.appendChild(text)
+                        kalendarzSelect.appendChild(option);
+                        selectedCalendar = parseInt(option.value);
+                    });
+                </script>
+                    <button class="btn btn-outline-primary col-sm-6" id="previous" type="button" onclick="previous()">Previous</button>
+                    <form class="form-inline">
+                        <label class="lead mr-2 ml-2" for="month"></label>
+                        <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                            <option value=0>Styczeń</option>
+                            <option value=1>Luty</option>
+                            <option value=2>Marzec</option>
+                            <option value=3>Kwiecień</option>
+                            <option value=4>Maj</option>
+                            <option value=5>Czerwiec</option>
+                            <option value=6>Lipiec</option>
+                            <option value=7>Sierpień</option>
+                            <option value=8>Wrzesień</option>
+                            <option value=9>Październik</option>
+                            <option value=10>Listopad</option>
+                            <option value=11>Grudzień</option>
+                        </select>
+                            <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                            <option value=2022>2022</option>
+                            <option value=2023>2023</option>
+                            <option value=2024>2024</option>
+                            <option value=2025>2025</option>
+                            <option value=2026>2026</option>
+                            <option value=2027>2027</option>
+                            <option value=2028>2028</option>
+                            <option value=2029>2029</option>
+                            <option value=2030>2030</option>
+                        </select>
+                    </form>
+                    <button class="btn btn-outline-primary col-sm-6" id="next" type="button" onclick="next()">Next</button>
+                </div>
+                <table class="table" id="calendar">
+                    <thead id="table-head">
+                        <tr>
+                            <th>Poniedziałek</th>
+                            <th>Wtorek</th>
+                            <th>Środa</th>
+                            <th>Czwartek</th>
+                            <th>Piątek</th>
+                            <th>Sobota</th>
+                            <th>Niedziela</th>
+                        </tr>
+                    </thead>
 
-                <tbody id="calendar-body">
+                    <tbody id="calendar-body">
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
         </div>
     </div>
     <div class="options-menu" id="options-menu">

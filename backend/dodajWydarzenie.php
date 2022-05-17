@@ -29,7 +29,7 @@
     <form method="post" class="form">
         <label for="nazwa">Nazwa</label>
             <input type="text" name="nazwa" required class="form-input" placeholder="Nazwa Wydarzenia"><br>
-        <label for="data">Termin</label>
+        <label for="data">Czas i data</label>
             <input type="datetime-local" name="data" required class="form-input" id="datetime-form"><br>
         <label for="waga">Powtarzaj co</label>
             <select name="powtarzanie" class="form-select">

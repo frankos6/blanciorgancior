@@ -9,6 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
+    <style> 
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+</style>
 </head>
 <body>
     <?php
@@ -17,7 +25,7 @@
             $q = "INSERT INTO kalendarze(`nazwa`,`kolor`,`user_id`) VALUES ('".$_POST['nazwa']."','".$_POST['kolor']."','".$_SESSION['user_id']."')";
             $result = $conn->query($q);                                         //Query dodawania zadania
             if ($result){
-                echo "Pomyślnie dodano kalendarz.";                            // Sprawdzanie czy query się poprawnie wykonało
+                echo "Pomyślnie dodano kalendarz.";                             // Sprawdzanie czy query się poprawnie wykonało
                 echo "<script>window.parent.location.reload();</script>";       //Powrót na stronę główną w przypadku pomyślnego dodania
             }
             else {

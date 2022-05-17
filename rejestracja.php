@@ -20,7 +20,7 @@
         } else{                                                                                                             //
             if ($Pass == $RePass){                                                                                          //  
                 $conn->query("INSERT INTO users VALUES (null, '$name', '$email', '$Pass')");                                //
-                header('Location: login.php');                                                                              // Przejście na login.php w przypadku pomyślnej rejestracji
+                echo '<script> window.location.href = "login.php" </script>';                                               // Przejście na login.php w przypadku pomyślnej rejestracji
             } else{                                                                                                         // 
                 echo "<script> document.getElementById('error-msg').innerHTML = 'Hasła się nie zgadzają!'</script>";        // Błąd o niepoprawnych hasłach
             }                                                                                                               //
