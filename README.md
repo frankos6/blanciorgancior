@@ -15,14 +15,17 @@ Funkcjonalność podstawowa:<br>
 Funkcjonalność zaawansowana:<br>
 
 • Tworzenie użytkowników ✔ <br>
-• Wysyłanie przypomnień na e-mail ❌<br>
-• Zmiana wyglądu kalendarza poprzez panel użytkownika ✔<br>
+• Możliwość udostępniania zdarzenia innemu użytkownikowi❌ <br>
+• Export kalendarza (dnia, miesiąca lub całego) do pliku (pdf, csv) ✔ (CTRL + P) <br>
+• Opcja drukowania kalendarza ✔ (CTRL + P) <br>
+• Zmiana wyglądu kalendarza poprzez panel użytkownika 🔅<br>
+• Przypomnienie o wydarzeniu wysyłane na e-maila ❌ <br>
 
 <hr>
 Sprawozdanie:<br> 
 
 • Projekt bazy danych w diagramie ERD ✔ <br>
-• Projekt funkcjonalny ❌<br>
+• Projekt funkcjonalny ✔<br>
 • Opis sposobu pracy  ✔<br>
 • Projekt graficzny ✔<br>
 <hr>
