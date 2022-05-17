@@ -16,7 +16,7 @@ Funkcjonalność zaawansowana:<br>
 
 • Tworzenie użytkowników ✔ <br>
 • Możliwość udostępniania zdarzenia innemu użytkownikowi❌ <br>
-• Export kalendarza (dnia, miesiąca lub całego) do pliku (pdf, csv) ✔ (CTRL + P) <br>
+• Export kalendarza (dnia, miesiąca lub całego) do pliku (pdf, csv) 🔅 (CTRL + P) <br>
 • Opcja drukowania kalendarza ✔ (CTRL + P) <br>
 • Zmiana wyglądu kalendarza poprzez panel użytkownika 🔅<br>
 • Przypomnienie o wydarzeniu wysyłane na e-maila ❌ <br>
