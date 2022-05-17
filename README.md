@@ -15,7 +15,7 @@ Funkcjonalność podstawowa:<br>
 Funkcjonalność zaawansowana:<br>
 
 • Tworzenie użytkowników ✔ <br>
-• Wysyłanie przypomnień na e-mail 🔅<br>
+• Wysyłanie przypomnień na e-mail ❌<br>
 • Zmiana wyglądu kalendarza poprzez panel użytkownika ✔<br>
 
 ------------------------------------------------------------------------------<br> 
