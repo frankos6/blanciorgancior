@@ -33,6 +33,7 @@
         }
     ?>
     <form method="post" class="form">
+        <input hidden name="id" type=number value=<?php echo $_GET['id']; ?> />
         <label for="nazwa">Nazwa</label>
             <input type="text" id="nazwa" name="nazwa" class="form-input" placeholder="Nazwa zadania" required><br>
         <label for="data">Termin</label>
