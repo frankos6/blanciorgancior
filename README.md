@@ -25,4 +25,4 @@ Sprawozdanie:<br>
 • Projekt funkcjonalny ❌<br>
 • Opis sposobu pracy  ✔<br>
 • Projekt graficzny ✔<br>
-
+------------------------------------------------------------------------------
