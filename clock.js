@@ -1,13 +1,13 @@
-today = new Date();
+const today = new Date();
 
-opening = new Date("May 13, 2022");
-msPerDay = 24 * 60 * 60 * 1000 ;
-timeLeft = (opening.getTime() - today.getTime());
+const opening = new Date("May 13, 2022");
+const msPerDay = 24 * 60 * 60 * 1000 ;
+const timeLeft = (opening.getTime() - today.getTime());
 
-e_daysLeft = timeLeft / msPerDay;
-daysLeft = Math.floor(e_daysLeft) + 1;
+const e_daysLeft = timeLeft / msPerDay;
+const daysLeft = Math.floor(e_daysLeft) + 1;
 
-dni = daysLeft.toString();
+let dni = daysLeft.toString();
 
 dni = dni.substring(1);
 console.log(dni);
