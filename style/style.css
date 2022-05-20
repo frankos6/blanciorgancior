@@ -55,10 +55,6 @@ a:hover{
 }
 
 .aboutwindow{
-  box-shadow:
-  0 0 5px rgba(255, 240, 31, .7),
-  0 0 20px rgba(255, 240, 31, .7),
-  0 0 40px rgba(255, 240, 31, .7);
   border: 3px solid #FFF01F;
   text-align: center;
   font-size: 36px;
