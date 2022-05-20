@@ -46,6 +46,7 @@ a:hover{
   animation: none;
   border-radius: 20px;
   cursor: pointer;
+    transition: 0.1s;
 }
 
 .about{
@@ -77,10 +78,12 @@ a:hover{
 .aboutname{
   margin: 2px;
 }
+
 .abouttitle{
   margin: 0;
   font-size: 24px;
 }
+
 .aboutcontent{
   font-size: 18px;
   border-top: 2px solid #FFF01F;
