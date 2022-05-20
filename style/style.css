@@ -86,9 +86,10 @@ a:hover{
   font-size: 24px;
 }
 .aboutcontent{
-  font-size: 22px;
+  font-size: 18px;
   border-top: 2px solid #FFF01F;
 }
+
 #clock {
     text-transform: uppercase;
 }
