@@ -46,7 +46,6 @@ a:hover{
   animation: none;
   border-radius: 20px;
   cursor: pointer;
-    transition: 0.1s;
 }
 
 .about{
@@ -59,12 +58,10 @@ a:hover{
   border: 3px solid #FFF01F;
   text-align: center;
   font-size: 36px;
-  padding: 20px 20px 0px;
   width: 90%;
   margin: 35px;
   height: 650px;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 20px 2em 0;
 }
 
 .aboutimg{
@@ -93,3 +90,25 @@ a:hover{
     text-transform: uppercase;
 }
 
+.footer {
+  font-size: 1rem;
+  margin: 30px auto 10px auto;
+  max-width: 450px;
+}
+
+#kontakt, #kontakt:active, #zmiany, #zmiany:active {
+  color: #FFF01F !important;
+  text-decoration: initial !important;
+  transition: none !important;
+  border: none !important;
+  padding: 0;
+}
+
+#kontakt:hover, #zmiany:hover {
+  transition: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  -webkit-animation: none;
+  -o-animation: none;
+  animation: none;
+}
