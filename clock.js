@@ -5,11 +5,9 @@ const msPerDay = 24 * 60 * 60 * 1000 ;
 const timeLeft = (opening.getTime() - today.getTime());
 
 const e_daysLeft = timeLeft / msPerDay;
-const daysLeft = Math.floor(e_daysLeft) + 1;
+const daysLeft = Math.abs(Math.floor(e_daysLeft) + 1);
 
-let dni = daysLeft.toString();
-
-dni = dni.substring(1);
+const dni = daysLeft.toString();
 console.log(dni);
 
 document.getElementById("clock").innerHTML = dni + " DNI";
