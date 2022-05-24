@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require 'login.php';                                                                                                    // Połącznie z login.php
-    require 'backend/connection.php';                                                                                       // Połącznie z bazą danych
+    require './../kalendarzbgt/login.php';                                                                                                    // Połącznie z login.php
+    require './../kalendarzbgt/backend/connection.php';                                                                                       // Połącznie z bazą danych
 
     // error_reporting(0);                                                                                                     // Wyłączenie pokazywania błędów
     // ini_set('display_errors', 0);                                                                                           //
@@ -21,7 +21,7 @@
                                                                                                                             
     if($password == $x[1]){                                                                                                 //
         $_SESSION['Imie'] = $x[0];                                                                                          // Ustawnianie imienia w sesji
-        echo '<script> window.location.href = "index.php" </script>';                                                       //
+        echo '<script> window.location.href = "/kalendarzbgt/index.php" </script>';                                                       //
     }else{                                                                                                                  //
         echo "<script> document.getElementById('error-msg').innerHTML = 'Błąd - nieprawidłowe hasło lub login!'</script>";  // Błąd logowania
     }                                                                                                                       //

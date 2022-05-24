@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="/kalendarzbgt/styles/style.css">
     <title>Document</title>
     <style> body{ background-color: #141414;
                   background-image: none;
@@ -66,7 +66,7 @@
         document.getElementById("nazwa").value = wydarzonko.nazwa;
         document.getElementById("data").value = wydarzonko.data.toISOString().replace(":00.000Z","") // :D
         document.getElementById("powtarzanie").value = wydarzonko.powtarzanie;
-        const deleteRedirect = () => { this.parent.document.getElementById('iframe').src = '/backend/usunWydarzenie.php?id='+<?php echo $_GET['id']; ?> } // :D
+        const deleteRedirect = () => { this.parent.document.getElementById('iframe').src = '/kalendarzbgt/backend/usunWydarzenie.php?id='+<?php echo $_GET['id']; ?> } // :D
     </script>
 </body>
 </html>

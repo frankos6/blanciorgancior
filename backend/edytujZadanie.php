@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="/kalendarzbgt/styles/style.css">
     <title>Nie powinno cię tu być</title>
     <style> body{ background-color: #141414;
                   background-image: none;
@@ -64,7 +64,7 @@
         document.getElementById("nazwa").value = zadanko.nazwa;
         document.getElementById("data").value = zadanko.data.toISOString().match(/(.*)T/)[1] // :D
         document.getElementById("wagi").value = zadanko.waga;
-        const deleteRedirect = () => { this.parent.document.getElementById('iframe').src = '/backend/usunZadanie.php?id='+<?php echo $_GET['id']; ?> } // :D
+        const deleteRedirect = () => { this.parent.document.getElementById('iframe').src = '/kalendarzbgt/backend/usunZadanie.php?id='+<?php echo $_GET['id']; ?> } // :D
     </script>
 </body>
 </html>

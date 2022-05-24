@@ -5,24 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/login-bg.css">
-    <link rel="icon" href="Images/logo.png">
+    <link rel="stylesheet" href="/kalendarzbgt/styles/style.css">
+    <link rel="icon" href="/kalendarzbgt/Images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="scripts/script.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script src="/kalendarzbgt/scripts/script.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/kalendarzbgt/Images/favicon.ico" />
 </head>
 <body>
 <div class="center-box">
     <div class="logo-box"> 
-         <div class="inline-block"> BGT <img src="Images/calendar-icon.png" class="calendar-icon"> </div>
+         <div class="inline-block"> BGT <img src="/kalendarzbgt/Images/calendar-icon.png" class="calendar-icon"> </div>
         CALENDAR
         <hr class="cat"> 
     </div>
         <div class="login-box">
-            <form action="rejestracja.php" class="login-form" method="POST">
+            <form action="/kalendarzbgt/rejestracja.php" class="login-form" method="POST">
             <p class="register-header">REJESTRACJA</p>
                 <p class="login-form-text">Imię:</p>
                 <input type="text" name="Name" class="login-form-input" required placeholder="Imię">
@@ -36,7 +35,7 @@
             </form>
                 <p id="error-msg"></p>
                 <p class="register-text">Masz już konto??</p>
-                <p class="register-link"><a href="login.php">Zaloguj się!</a></p>
+                <p class="register-link"><a href="/kalendarzbgt/login.php">Zaloguj się!</a></p>
         </div>
 </div>
 </body>

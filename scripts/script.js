@@ -1,16 +1,16 @@
 function addEventForm() {                                                   // Otworzenie formularza do dodawania wydarzeń
     document.getElementById("options-menu").style.display = "flex";         // Pokazanie się okna 
-    document.getElementById('iframe').src = "backend/dodajWydarzenie.php"   // Zmienienie iframe'a w zależności od przycisku
+    document.getElementById('iframe').src = "/kalendarzbgt/backend/dodajWydarzenie.php"   // Zmienienie iframe'a w zależności od przycisku
 }
 
 function addTaskForm(){                                                     // Otworzenie się formularza do dodawania zadań
     document.getElementById("options-menu").style.display = "flex";         // Pokazanie się okna
-    document.getElementById('iframe').src = "backend/dodajZadanie.php"      // Zmienienie iframe'a w zależności od przycisku
+    document.getElementById('iframe').src = "/kalendarzbgt/backend/dodajZadanie.php"      // Zmienienie iframe'a w zależności od przycisku
 }
   
 function addCalendarForm(){
     document.getElementById("options-menu").style.display = "flex";         // Pokazanie się okna
-    document.getElementById('iframe').src = "backend/dodajKalendarz.php"      // Zmienienie iframe'a w zależności od przycisku
+    document.getElementById('iframe').src = "/kalendarzbgt/backend/dodajKalendarz.php"      // Zmienienie iframe'a w zależności od przycisku
 }
 function off() {
     document.getElementById("options-menu").style.display = "none";         // Zamykanie okna dodawania Wydarzeń/Zadań

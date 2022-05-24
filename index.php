@@ -1,11 +1,11 @@
 <?php session_start();
     if(!isset($_SESSION['Imie'])){
-        header("Location: login.php");
+        header("Location: /kalendarzbgt/login.php");
     }
 ?>
 <!DOCTYPE html>
 <?php                                       // szymon-type syntax :DDD
-    require("backend\connection.php")
+    require(".\..\kalendarzbgt\backend\connection.php")
 ?>
 <html lang="en">
 <head>
@@ -13,14 +13,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalendarz Blancior Gigancior!</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="Images/logo.png">
+    <link rel="stylesheet" href="/kalendarzbgt/styles/style.css">
+    <link rel="icon" href="/kalendarzbgt/Images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/scripts.js" defer></script>
-    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script src="/kalendarzbgt/scripts/script.js" defer></script>
+    <script src="/kalendarzbgt/scripts/scripts.js" defer></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/kalendarzbgt/Images/favicon.ico" />
 </head>
 <body class="preload">
     <div class="content" id="calendar-surface">  
@@ -29,7 +29,7 @@
             <p id="date-display"></br></p>
             <div id="assignments" class="assignment-display">
             </div>
-            <img src="Images/logout-icon.png" class="logout-icon" onclick="logout()" title="Wyloguj się">
+            <img src="/kalendarzbgt/Images/logout-icon.png" class="logout-icon" onclick="logout()" title="Wyloguj się">
             <div class="add-buttons">
                 <button class="add-button" title="Dodaj zadanie" onclick="addTaskForm()"> Dodaj Zadanie  + </button>
                 <button class="add-button" title="Dodaj wydarzenie" onclick="addEventForm()">Dodaj Wydarzenie + </button>
@@ -41,7 +41,7 @@
                     <select name="kalendarz" id="kalendarz" class="index-select" class="form-select" >
 
             </select>
-            <img class="add-calendar-img" src="Images/plus-icon.png" onclick="addCalendarForm()">
+            <img class="add-calendar-img" src="/kalendarzbgt/Images/plus-icon.png" onclick="addCalendarForm()" alt="Add icon">
             <script>
                 let selectedCalendar;
                 const kalendarzSelect = document.getElementById('kalendarz');  //Skrypt do wyboru kalendarzy dla obecnego użytkownika

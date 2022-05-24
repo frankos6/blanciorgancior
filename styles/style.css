@@ -6,7 +6,7 @@ html, body{
 }
 
 body{
-    background-image: url(../Images/bg-image.jpg);
+    background-image: url(/kalendarzbgt/Images/bg-image.jpg);
     background-size:cover;
 }
 
@@ -65,7 +65,7 @@ body{
 #welcome-msg{
     border-bottom: 1px solid #040406;
     animation: appearText 1s ease-in;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border-bottom: 1px solid white;
 }
 
@@ -234,7 +234,7 @@ body{
     padding: 10px;
 }
 
-.login-form-input{
+.login-form-input, .login-form-input:focus{
     font-family: 'Roboto', sans-serif;
     background-color: #040406;
     border: 0;
@@ -245,23 +245,7 @@ body{
     font-size: 1.3rem;
     font-weight: 550;
     padding: 5px;
-    margin: auto;
-    margin-top: -10px;
-}
-
-.login-form-input:focus{
-    font-family: 'Roboto', sans-serif;
-    background-color: #040406;
-    border: 0;
-    border-bottom: 1px solid white;
-    height: 2.3rem;
-    width: 23rem;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 550;
-    padding: 5px;
-    margin: auto;
-    margin-top: -10px;
+    margin: -10px auto auto;
 }
 
 .login-form-text{
@@ -450,7 +434,7 @@ th{
 
 .calendarCell:hover{
     background-color: #1f1f1f;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
     transition: 0.3s ease-in-out;
     box-sizing: border-box;
     cursor: pointer;
@@ -458,7 +442,7 @@ th{
 
 .calendarCellClick{
     background-color: #1f1f1f;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
     transition: 0.3s ease-in-out;
     box-sizing: border-box;
     cursor: pointer;
@@ -575,7 +559,7 @@ li{
 }
 
 hr{
-    margin: 0px;
+    margin: 0;
 }
 ul{
     margin: 5px;
@@ -657,7 +641,7 @@ input:checked + .slider:before {
 }
 
 @keyframes appearText{
-    0%{opacity: 0%;}
+    0%{opacity: 0;}
     50%{opacity: 50%;}
     100%{opacity: 100%;}
 }

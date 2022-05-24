@@ -234,9 +234,9 @@ function displayDayInfo(event) {
         event.currentTarget.zadania.forEach(element => {
             const li = document.createElement('li');
             li.innerHTML = element.nazwa;
-            li.onclick = () =>{                                                              // Otworzenie się formularza do edycji zadań
+            li.onclick = () => {                                                              // Otworzenie się formularza do edycji zadań
                     document.getElementById("options-menu").style.display = "flex";          // Pokazanie się okna
-                    document.getElementById('iframe').src = "backend/edytujZadanie.php?id="+element.id;     // Zmienienie iframe'a w zależności od przycisku
+                    document.getElementById('iframe').src = "/kalendarzbgt/backend/edytujZadanie.php?id="+element.id;     // Zmienienie iframe'a w zależności od przycisku
             }
             ul.appendChild(li);
         });
@@ -256,7 +256,7 @@ function displayDayInfo(event) {
             li.innerHTML = element.nazwa + " | " + element.data.toLocaleTimeString("pl",{hour: '2-digit', minute:'2-digit'});
             li.onclick = () =>{                                                              // Otworzenie się formularza do edycji zadań
                     document.getElementById("options-menu").style.display = "flex";          // Pokazanie się okna
-                    document.getElementById('iframe').src = "backend/edytujWydarzenie.php?id="+element.id;     // Zmienienie iframe'a w zależności od przycisku
+                    document.getElementById('iframe').src = "/kalendarzbgt/backend/edytujWydarzenie.php?id="+element.id;     // Zmienienie iframe'a w zależności od przycisku
             }
             ul.appendChild(li);
         });

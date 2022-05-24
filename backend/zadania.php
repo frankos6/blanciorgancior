@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-        require('connection.php')
+        require('./../../kalendarzbgt/backend/connection.php')
     ?>
     <script>
         function generate_table() {

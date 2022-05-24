@@ -1,6 +1,6 @@
 <?php
-    require 'register.php';                                                                                                 // Połączenie z register.php
-    require 'backend/connection.php';                                                                                       // Połączenie z bazą danych
+    require('./../kalendarzbgt/register.php');                                                                                                 // Połączenie z register.php
+    require('./../kalendarzbgt/backend/connection.php');                                                                                       // Połączenie z bazą danych
 
     error_reporting(0);                                                                                                     // Wyłącznie pokazywanie błędów
     ini_set('display_errors', 0);                                                                                           //
@@ -22,7 +22,7 @@
                 $conn->query("INSERT INTO users VALUES (null, '$name', '$email', '$Pass')");                                //
                 $obj = $conn->query("SELECT id FROM users WHERE email = '$email'")->fetch_object();                         // id dodanego użytkownika
                 $conn->query("INSERT INTO kalendarze VALUES (null, '#ffff00', 'Kalendarz', '$obj->id'");                    // dodanie domyślnego kalendarza
-                echo '<script> window.location.href = "login.php" </script>';                                                                                // Przejście na login.php w przypadku pomyślnej rejestracji
+                echo '<script> window.location.href = "/kalendarzbgt/login.php" </script>';                                                                                // Przejście na login.php w przypadku pomyślnej rejestracji
             } else{                                                                                                         // 
                 echo "<script> document.getElementById('error-msg').innerHTML = 'Hasła się nie zgadzają!'</script>";        // Błąd o niepoprawnych hasłach
             }                                                                                                               //
