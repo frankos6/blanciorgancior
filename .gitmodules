@@ -1,0 +1,5 @@
+[submodule ".\\kalendarzbgt\\"]
+	path = .\\kalendarzbgt\\
+	url = https://github.com/BGTYaneck/KalendarzBGT
+	branch = blanciorgancior.pl
+
