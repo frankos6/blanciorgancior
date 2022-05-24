@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli('localhost','root','','kalendarz');
+$conn = new mysqli('blanciorgancior.pl','00573560_bgtcalendar','Kabaczek13kabaczek','00573560_bgtcalendar');
 //if (isset($_SESSION['Imie']) && (str_contains($_SERVER['PHP_SELF'],"login.php")||str_contains($_SERVER['PHP_SELF'],"logowanie.php"))){
 //    $user_name = $_SESSION['Imie'];
 //}
@@ -94,6 +94,6 @@ $obj = $result->fetch_row();
     });
     wydarzenia = wydarzenia1;
     zadania = zadania1;
-    delete kalendarze1;         //(już) zbędne zmienne
+    delete wydarzenia1;         //(już) zbędne zmienne
     delete zadania1;   
 </script>
