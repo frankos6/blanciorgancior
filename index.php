@@ -5,7 +5,7 @@
 ?>
 <!DOCTYPE html>
 <?php                                       // szymon-type syntax :DDD
-    require(".\..\kalendarzbgt\backend\connection.php")
+    require("./../kalendarzbgt/backend/connection.php")
 ?>
 <html lang="en">
 <head>
