@@ -16,6 +16,13 @@ body{
   font-size: 36px;
 }
 
+
+.siema{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+}
 .content{
   text-align: center;
   animation: neonAnim 1.5s alternate-reverse infinite;
