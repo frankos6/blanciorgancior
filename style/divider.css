@@ -1,10 +1,12 @@
 .divider {
     display: flex;
 }
+
 .divider:before, .divider:after {
     content: "";
     flex: 1;
 }
+
 .dividertext{
     overflow: hidden;
     align-items: center;
@@ -13,6 +15,7 @@
     font-size: 48px;
     margin: 0;
 }
+
 .dividertext:before, .dividertext:after {
     background: #000000;
     padding: 50px 0;
@@ -25,4 +28,13 @@
     padding: 50px 0;
     height: 0;
     transform: rotate(-45deg);
+}
+
+.divider2text{
+    overflow: hidden;
+    align-items: center;
+    background: #FFF01F;
+    color: #000000;
+    font-size: 48px;
+    margin: 0;
 }
