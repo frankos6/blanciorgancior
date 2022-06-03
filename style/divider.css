@@ -19,3 +19,10 @@
     height: 0;
     transform: rotate(45deg);
 }
+
+.divider2text:before, .divider2text:after {
+    background: #000000;
+    padding: 50px 0;
+    height: 0;
+    transform: rotate(-45deg);
+}
