@@ -1,5 +1,10 @@
 .divider {
-    display: flex;
+ display: flex;
+}
+
+.divider:before, .divider:after {
+    content: "";
+    flex: 1;
 }
 
 .dividertext{
@@ -9,4 +14,10 @@
     color: #000000;
     font-size: 48px;
     margin: 0;
+}
+
+.dividertext:before, .dividertext:after {
+    background: #000000;
+    padding: 50px 0;
+    height: 0;
 }
