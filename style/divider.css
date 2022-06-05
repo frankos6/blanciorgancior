@@ -19,5 +19,5 @@
 .dividertext:before, .dividertext:after {
     background: #000000;
     padding: 50px 0;
-    height: 0;
+    height: 50px;
 }
