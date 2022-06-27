@@ -4,7 +4,7 @@ body{
   font-family: 'Bebas Neue' !important;
   font-size: 250px !important;
   display:flex;
-  flex-direction:column; 
+  flex-direction:column;
   justify-content:center;
 }
 
@@ -77,6 +77,10 @@ a:hover{
   width: 150px;
   border: 2px solid #FFF01F;
   object-fit: cover;
+}
+
+.noafter:before, .noafter:after {
+  background: none !important;
 }
 
 .aboutname{

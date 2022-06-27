@@ -1,0 +1,45 @@
+body {
+    background: #050505;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+#soon {
+    font-size: 100px;
+    color: azure;
+    text-align: center;
+    width:800px;
+    margin:0 auto;
+}
+
+.tf {
+    position: absolute;
+    height: 50px;
+    width: 65px;
+    right: 17px;
+    bottom: 16px;
+    transform: rotate(-45deg);
+}
+
+.outside {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font {
+    color: #00FF00;
+    font-family: Courier;
+    font-size: 35px;
+}
+
+#data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.6);
+}
