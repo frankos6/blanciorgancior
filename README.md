@@ -1,5 +1,5 @@
 # Strona Blancior Gancior
 
-[Link](https://blanciorgancior.pl)
+[Link](https://cybergang.pl)
 
-<img src="https://blanciorgancior.pl/images/bgtlogo.png" height=200 />
+<img src="https://cybergang.pl/images/bgtlogo.png" height=200 />
